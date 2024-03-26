@@ -64,7 +64,7 @@ This release contains significant improvements for the process of saving request
 
 **Configuration changes**
 
-Introduced :ref:`UserAgentParserProvider <on-premises/kisslog-backend/configuration:useragentparserprovider>` configuration property.
+Introduced :ref:`UserAgentParserProvider <on-premises/logBee-backend/configuration:useragentparserprovider>` configuration property.
 
 .. admonition:: Update guide
 
