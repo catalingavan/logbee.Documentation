@@ -373,10 +373,10 @@ In the `logBee.Backend` folder, open the configuration file located under ``Conf
    * - Property
      - Value
      - Notes
-   * - KissLogBackendUrl
+   * - LogBeeBackendUrl
      - https://logBee-backend.azurewebsites.net
      - "URL" from the `logBee-backend` App Service
-   * - KissLogFrontendUrl
+   * - LogBeeFrontendUrl
      - https://logBee-frontend.azurewebsites.net
      - "URL" from the `logBee-frontend` App Service
    * - Database.Provider
@@ -406,10 +406,10 @@ In the `logBee.Frontend` folder, open the configuration file located under ``Con
    * - Property
      - Value
      - Notes
-   * - KissLogBackendUrl
+   * - LogBeeBackendUrl
      - https://logBee-backend.azurewebsites.net
      - "URL" from the `logBee-backend` App Service
-   * - KissLogFrontendUrl
+   * - LogBeeFrontendUrl
      - https://logBee-frontend.azurewebsites.net
      - "URL" from the `logBee-frontend` App Service
    * - Database.Provider

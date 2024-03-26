@@ -1,7 +1,7 @@
 Microsoft Azure
 ============================
 
-In this tutorial we will deploy KissLog server on Microsoft Azure.
+In this tutorial we will deploy logBee server on Microsoft Azure.
 
 .. toctree::
    :maxdepth: 2

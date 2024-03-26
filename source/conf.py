@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'KissLog.Documentation'
-copyright = '2020, Catalin Gavan'
+project = 'logBee.Documentation'
+copyright = '2024, Catalin Gavan'
 author = 'Catalin Gavan'
 
 # The full version, including alpha/beta/rc tags
@@ -76,9 +76,9 @@ html_favicon = 'favicon.ico'
 # -- Edit on GitHub -------------------------------------------------
 html_context = {
     'display_github': True,
-    'github_user': 'KissLog-net',
-    'github_repo': 'KissLog.Documentation',
-    'github_version': 'master',
+    'github_user': 'logBee-net',
+    'github_repo': 'logBee.Documentation',
+    'github_version': 'main',
     'conf_py_path': '/source/',
     'source_suffix': '.rst'
 }

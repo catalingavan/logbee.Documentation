@@ -165,7 +165,7 @@ Quick checklist
                    <handlers>
                        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
                    </handlers>
-                   <aspNetCore processPath="dotnet" arguments=".\KissLog.Backend.AspNetCore.dll" stdoutLogEnabled="true" stdoutLogFile=".\logs\stdout" hostingModel="inprocess" />
+                   <aspNetCore processPath="dotnet" arguments=".\logBee.Backend.AspNetCore.dll" stdoutLogEnabled="true" stdoutLogFile=".\logs\stdout" hostingModel="inprocess" />
                </system.webServer>
            </location>
        </configuration>

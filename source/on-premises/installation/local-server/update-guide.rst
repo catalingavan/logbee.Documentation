@@ -85,7 +85,7 @@ Update logBee.Frontend configuration
        :caption: C:\\inetpub\\wwwroot\\logBee.Frontend\\Configuration\\logBee.json
 
        {
-           "KissLogFrontendDomain": "logBee.dev",
+           "LogBeeFrontendDomain": "logBee.dev",
            "StaticResourcesVersion": "any-new-value"
        }
 

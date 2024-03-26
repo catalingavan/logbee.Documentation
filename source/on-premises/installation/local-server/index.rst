@@ -1,7 +1,7 @@
 Local server (IIS)
 ============================
 
-In this tutorial we will install KissLog server on a Windows Server with IIS.
+In this tutorial we will install logBee server on a Windows Server with IIS.
 
 .. toctree::
    :maxdepth: 2
