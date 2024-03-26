@@ -1,0 +1,22 @@
+body { font-size: 14px; }
+.markdown-body { font-size: 14px; }
+
+.breadcrumb { flex-wrap: nowrap; overflow: hidden; white-space: nowrap; }
+
+#container { padding: 30px 0; background-color: #fff; }
+#navbar .navbar-brand > a:hover { text-decoration: none; }
+#navbar .navbar-brand > a img { height: 32px; }
+#navbar .navbar-brand > a span { color: #282828; vertical-align: bottom; }
+
+.card { margin-bottom: 1.25rem; box-shadow: 0 1px 2px rgba(0,0,0,.05) }
+.card-title { position: relative; }
+.card-header .card-title { margin-bottom: 0; }
+.card-header h4.card-title { font-size: 1.2rem; }
+
+
+.breadcrumb { font-size: 14px; }
+
+
+.toc-menu:not(.page-ready) { visibility: hidden; }
+.toc-menu > ul > li > a { font-weight: 550; }
+
