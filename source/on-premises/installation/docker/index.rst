@@ -31,7 +31,7 @@ To get started running logBee as a Docker application, create the following file
 .. admonition:: Download Docker files
    :class: note
 
-   Full working example of the files above can be found on `https://github.com/KissLog-net/KissLog-server <https://github.com/KissLog-net/KissLog-server/tree/main/Docker>`_.
+   Full working example of the files above can be found on `https://github.com/logBee-net/logBee-app <https://github.com/logBee-net/logBee-app/tree/main/Docker>`_.
 
 .. code-block:: none
     :caption: docker-compose.yml
@@ -45,8 +45,8 @@ To get started running logBee as a Docker application, create the following file
     
     services:
       backend:
-        image: catalingavan/logBee.backend:6.0.0
-        container_name: logBee.backend.dev
+        image: catalingavan/logbee.backend:6.0.0
+        container_name: logbee.backend.dev
         restart: unless-stopped
         volumes:
           - ./backend.appsettings.json:/app/appsettings.json
@@ -57,8 +57,8 @@ To get started running logBee as a Docker application, create the following file
           - "mongodb"
     
       frontend:
-        image: catalingavan/logBee.frontend:6.0.0
-        container_name: logBee.frontend.dev
+        image: catalingavan/logbee.frontend:6.0.0
+        container_name: logbee.frontend.dev
         restart: unless-stopped
         volumes:
           - ./frontend.appsettings.json:/app/appsettings.json
@@ -70,7 +70,7 @@ To get started running logBee as a Docker application, create the following file
     
       mongodb:
         image: mongo:6.0.4
-        container_name: logBee.mongodb.dev
+        container_name: logbee.mongodb.dev
         restart: unless-stopped
         volumes:
           - mongo-data:/data/db

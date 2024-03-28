@@ -13,7 +13,7 @@ Artifacts
 - logBee.Backend-{version}-win-x64.zip
 - logBee.Frontend-{version}-win-x64.zip
 
-Artifacts can be downloaded from `https://github.com/KissLog-net/KissLog-server <https://github.com/KissLog-net/KissLog-server>`_.
+Artifacts can be downloaded from `https://github.com/logBee-net/logBee-app <https://github.com/logBee-net/logBee-app>`_.
 
 Services
 ~~~~~~~~~~~~~~~~~~~~~
@@ -179,4 +179,4 @@ Quick checklist
 Need help?
 -------------------------------------------------------
 
-Open a `GitHub issue <https://github.com/KissLog-net/KissLog-server/issues>`_ or send an email to catalingavan@gmail.com.
+Open a `GitHub issue <https://github.com/logBee-net/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.

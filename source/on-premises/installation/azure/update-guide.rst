@@ -13,7 +13,7 @@ Artifacts
 - logBee.Backend-{version}-linux-x64.zip
 - logBee.Frontend-{version}-linux-x64.zip
 
-Artifacts can be downloaded from `https://github.com/KissLog-net/KissLog-server <https://github.com/KissLog-net/KissLog-server>`_.
+Artifacts can be downloaded from `https://github.com/logBee-net/logBee-app <https://github.com/logBee-net/logBee-app>`_.
 
 Update the applications
 -------------------------------------------------------
