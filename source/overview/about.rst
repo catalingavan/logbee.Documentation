@@ -29,7 +29,7 @@ Table of Contents
    :includehidden:
 
    self
-   ../SDK/index
+   ../integrations/index
    ../on-premises/index
    ../licensing/index
    ../TermsOfService
