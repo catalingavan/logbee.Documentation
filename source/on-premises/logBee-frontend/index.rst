@@ -16,7 +16,7 @@ Authentication
 
 logBee.Frontend uses a JSON Web Token (JWT) for authentication.
 
-The authentication JWT must be signed with the value provided at :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property from the KissLog.json configuration file.
+The authentication JWT must be signed with the value provided at :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property from the logBee.json configuration file.
 
 For the default value of ``$.Authorization.HS256Secret``, you can use the following authentication JWT:
 
