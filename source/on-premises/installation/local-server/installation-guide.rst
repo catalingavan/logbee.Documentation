@@ -71,7 +71,7 @@ IIS web applications
 
 
 .. note::
-   Hotizontal scaling is not currently supported by logBee server.
+   Hotizontal scaling is not currently supported by logBee app.
 
    Both logBee.Backend and logBee.Frontend applications must each be deployed to a single instace.
 
@@ -119,7 +119,7 @@ Startup steps
 Post deployment
 -------------------------------------------------------
 
-Your logBee server is running and ready to process the logs. You can update your .NET applications to start sending the logs to the newly created logBee.Backend application.
+Your logBee app is running and ready to process the logs. You can update your .NET applications to start sending the logs to the newly created logBee.Backend application.
 
 Make sure you update the configuration values, respectively the "OrganizationId", "ApplicationId" and "ApiUrl".
 

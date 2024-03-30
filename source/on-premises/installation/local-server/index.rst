@@ -1,7 +1,7 @@
 Local server (IIS)
 ============================
 
-In this tutorial we will install logBee server on a Windows Server with IIS.
+In this tutorial we will install logBee on a Windows os with IIS.
 
 .. toctree::
    :maxdepth: 2

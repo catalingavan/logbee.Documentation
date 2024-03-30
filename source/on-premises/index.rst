@@ -1,9 +1,9 @@
 logBee on-premises
 ======================
 
-logBee server can be installed on-premises.
+logBee can be installed on-premises.
 
-Hosting logBee server locally, all the logs will be stored and accessible only from within your in-house servers.
+Hosting logBee locally, all the logs will be stored and accessible only from within your in-house servers.
 
 Artifacts
 ------------------------
