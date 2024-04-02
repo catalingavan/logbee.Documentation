@@ -6,4 +6,4 @@ Integrations
    :titlesonly:
    :includehidden:
 
-   dotnet/index
+   KissLog.net/index
