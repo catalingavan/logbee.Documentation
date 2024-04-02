@@ -6,4 +6,5 @@ Integrations
    :titlesonly:
    :includehidden:
 
-   KissLog.net/index
+   KissLog-net/index
+   REST/index
