@@ -1,11 +1,7 @@
 KissLog (.NET)
 ============================
 
-KissLog NuGet package is the built-in .NET integration for saving logs to logBee.
-
-This section contains documentation and examples of using KissLog framework.
-
-If you are in trouble, or if you have questions or suggestions, please open a `GitHub issue <https://github.com/KissLog-net/KissLog.Sdk/issues>`_.
+`KissLog <https://github.com/KissLog-net/KissLog.Sdk>`_ is the built-in .NET integration for saving logs to logBee.
 
 Table of Contents
 ------------------
