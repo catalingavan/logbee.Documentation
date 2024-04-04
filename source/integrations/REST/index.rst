@@ -1,7 +1,7 @@
 REST
 ============================
 
-You can create logs by consuming the REST endpoint provided by logBee (https://api.logbee.net).
+You can create logs by consuming the REST endpoint provided by logBee.
 
 .. code-block:: json
     :caption: POST https://api.logbee.net/request-logs

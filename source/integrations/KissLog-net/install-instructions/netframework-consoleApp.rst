@@ -23,9 +23,9 @@ Instructions
 
     <configuration>
         <appSettings>
-            <add key="KissLog.OrganizationId" value="_OrganizationId_" />
-            <add key="KissLog.ApplicationId" value="_ApplicationId_" />
-            <add key="KissLog.ApiUrl" value="https://api.kisslog.net" />
+            <add key="LogBee.OrganizationId" value="_OrganizationId_" />
+            <add key="LogBee.ApplicationId" value="_ApplicationId_" />
+            <add key="LogBee.ApiUrl" value="https://api.logbee.net" />
         </appSettings>
     </configuration>
 

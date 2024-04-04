@@ -1,7 +1,7 @@
 OpenAPI specification
 ============================
 
-``POST https://api.logbee.net/request-logs`` payload schema:
+``POST https://api.logbee.net/request-logs`` request payload schema:
 
 .. code-block:: yaml
 

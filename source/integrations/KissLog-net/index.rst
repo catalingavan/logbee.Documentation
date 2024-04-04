@@ -1,7 +1,7 @@
 KissLog (.NET)
 ============================
 
-`KissLog <https://github.com/KissLog-net/KissLog.Sdk>`_ is the built-in .NET integration for saving logs to logBee.
+`KissLog <https://github.com/KissLog-net/KissLog.Sdk>`_ NuGet is the built-in .NET integration for saving the logs to logBee.
 
 Table of Contents
 ------------------

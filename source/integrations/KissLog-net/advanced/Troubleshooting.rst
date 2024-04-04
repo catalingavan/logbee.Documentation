@@ -29,7 +29,7 @@ b.) Use the api key values directly instead of reading them from the configurati
     {
         string organizationId = "87a5d367-96b2-4a8a-927a-0988625e2b3d";
         string applicationId = "cb5b9a65-74d0-4cc8-8566-32e4a9f8e63f";
-        string apiUrl = "https://api.kisslog.net";
+        string apiUrl = "https://api.logbee.net";
 
         KissLogConfiguration.Listeners
             .Add(new RequestLogsApiListener(new Application(organizationId, applicationId))
@@ -50,13 +50,13 @@ c.) Are you using a Console application? If yes, make sure you set the ``UseAsyn
         KissLogConfiguration.Listeners
             .Add(new RequestLogsApiListener(new Application("87a5d367-96b2-4a8a-927a-0988625e2b3d", "cb5b9a65-74d0-4cc8-8566-32e4a9f8e63f"))
             {
-                ApiUrl = "https://api.kisslog.net",
+                ApiUrl = "https://api.logbee.net",
                 UseAsync = false
             });
     }
 
 
-d.) Check the network access to https://api.kisslog.net. Open the URL in a browser - you should receive a "Running" 200 OK response.
+d.) Check the network access to https://api.logbee.net. Open the URL in a browser - you should receive a "Running" 200 OK response.
 
 If none of the steps above work, please `create a ticket <https://github.com/KissLog-net/KissLog.Sdk/issues>`_.
 

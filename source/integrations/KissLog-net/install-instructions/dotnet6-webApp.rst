@@ -30,9 +30,9 @@ Instructions
             }
         },
 
-        "KissLog.OrganizationId": "_OrganizationId_",
-        "KissLog.ApplicationId": "_ApplicationId_",
-        "KissLog.ApiUrl": "https://api.kisslog.net"
+        "LogBee.OrganizationId": "_OrganizationId_",
+        "LogBee.ApplicationId": "_ApplicationId_",
+        "LogBee.ApiUrl": "https://api.logbee.net"
     }
 
 3. Update **Program.cs**

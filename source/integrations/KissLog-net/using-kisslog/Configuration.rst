@@ -22,7 +22,7 @@ Gets executed for every logged "System.Exception". The result will be appended t
             return null;
         });
 
-An example of using "AppendExceptionDetails" to log Entity Framework validation exceptions can be found  :doc:`here </SDK/examples/Entity-Framework-validation>`.
+An example of using "AppendExceptionDetails" to log Entity Framework validation exceptions can be found  :doc:`here </integrations/KissLog-net/examples/Entity-Framework-validation>`.
 
 ShouldLogRequestHeader
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

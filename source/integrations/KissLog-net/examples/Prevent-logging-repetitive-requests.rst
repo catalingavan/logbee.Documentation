@@ -47,9 +47,9 @@ Using the custom interceptor:
     private static void ConfigureKissLog()
     {
         KissLogConfiguration.Listeners
-            .Add(new RequestLogsApiListener(new Application("KissLog.OrganizationId", "KissLog.ApplicationId"))
+            .Add(new RequestLogsApiListener(new Application("LogBee.OrganizationId", "LogBee.ApplicationId"))
             {
-                ApiUrl = "https://api.kisslog.net",
+                ApiUrl = "https://api.logbee.net",
                 Interceptor = new HealthCheckInterceptor()
             });
     }
