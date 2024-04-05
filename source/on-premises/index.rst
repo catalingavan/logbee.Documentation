@@ -1,5 +1,5 @@
-logBee on-premises
-======================
+logBee app (on-premises)
+=============================
 
 logBee can be installed on-premises.
 
