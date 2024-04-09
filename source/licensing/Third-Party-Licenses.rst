@@ -9,6 +9,11 @@ In order to use logBee.net on-premises, licensee must fully agree and comply wit
 
 We are trying to keep this list up-to-date. If we unintentionally missed to list a component, please send an email to catalingavan@gmail.com.
 
+Assets
+----------------------------------
+
+<a href="https://www.freepik.com/free-vector/gradient-hexagonal-background_13955212.htm">Home page cover image by coolvector</a> on Freepik
+
 Back-end components
 -----------------------------------
 
