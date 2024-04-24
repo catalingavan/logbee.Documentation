@@ -6,5 +6,6 @@ Integrations
    :titlesonly:
    :includehidden:
 
+   Serilog-net/index
    KissLog-net/index
    REST/index
