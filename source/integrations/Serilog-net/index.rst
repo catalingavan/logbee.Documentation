@@ -3,14 +3,14 @@ Serilog (.NET)
 
 Applications using `Serilog <https://github.com/serilog/serilog>`_ can save the events to logBee.net using the custom `Serilog LogBee Sink <https://github.com/logBee-net/serilog-sinks-logbee>`_.
 
-Table of Contents
-------------------
+Install instructions
+-----------------------
 
 .. toctree::
    :maxdepth: 1
    
-   dotnet-webApp
-   dotnet-nonWebApp
+   webApplications
+   consoleApps/index
 
 Examples
 ------------------
