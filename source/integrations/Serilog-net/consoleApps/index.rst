@@ -9,6 +9,9 @@ Console applications using `Serilog <https://github.com/serilog/serilog>`_ can i
         .WriteTo.LogBee(new LogBeeApiKey("_OrganizationId_", "_ApplicationId_", "https://api.logbee.net"))
         .CreateLogger();
 
+.. contents:: Contents
+   :local:
+
 Saving the logs
 ----------------------------------------------
 
@@ -139,7 +142,7 @@ To use the Microsoft.Extensions.Logging framework, you will also need to install
         }
     }
 
-Configuring "Request" properties
+"Request" properties
 ----------------------------------------------
 
 In console applications where the concept of requests may not apply directly, the ``NonWebLoggerContext`` can be used to configure the "HTTP" properties that are saved in logBee.net.
@@ -168,7 +171,13 @@ Configuring the "Requests" can be useful for identifying and filtering different
             int executionCount = 0;
             while (true)
             {
-                loggerContext.Reset($"http://application/execution/{executionCount}");
+                loggerContext.Reset(new RequestProperties($"http://application/execution/{executionCount}")
+                {
+                    Headers = new Dictionary<string, string>
+                    {
+                        { "key1", "value1" }
+                    }
+                });
 
                 Log.Information("First log message from Serilog");
 
@@ -188,7 +197,7 @@ Configuring the "Requests" can be useful for identifying and filtering different
                 }
                 finally
                 {
-                    // flush the logs to logBee endpoint
+                    // flush the logs to the logBee endpoint
                     await loggerContext.FlushAsync();
                 }
 
@@ -201,10 +210,39 @@ Configuring the "Requests" can be useful for identifying and filtering different
 .. image:: images/Request-properties.png
     :alt: Request properties
 
-Table of Contents
-------------------
+Logging files
+----------------------------------------------
 
-.. toctree::
-   :maxdepth: 1
-   
-   install-instructions
+You can use the ``loggerContext`` to save string contents as files.
+
+.. code-block:: c#
+
+    var loggerContext = new NonWebLoggerContext("/file-example");
+
+    Log.Logger = new LoggerConfiguration()
+        .WriteTo.LogBee(
+            new LogBeeApiKey("_OrganizationId_", "_ApplicationId_", "https://api.logbee.net"),
+            loggerContext
+        )
+        .CreateLogger();
+
+    Log.Information("Info message");
+    Log.Warning("War message");
+
+    loggerContext.LogAsFile(JsonSerializer.Serialize(new
+    {
+        eventCode = "AUTHORISATION",
+        amount = new
+        {
+            currency = "USD",
+            value = 12
+        }
+    }), "Event.json");
+
+    Log.CloseAndFlush();
+
+.. image:: images/request_files_tab.png
+    :alt: Request Files tab
+
+.. image:: images/request_file_preview.png
+    :alt: Request File preview
