@@ -1,26 +1,15 @@
 Serilog (.NET)
 ====================
 
-Applications using `Serilog <https://github.com/serilog/serilog>`_ can save the events to logBee.net using the custom `Serilog LogBee Sink <https://github.com/logBee-net/serilog-sinks-logbee>`_.
+Applications using `Serilog <https://github.com/serilog/serilog>`_ can save the events to logBee.net using the `Serilog LogBee Sink <https://github.com/logBee-net/serilog-sinks-logbee>`_.
 
-Install instructions
------------------------
-
-.. toctree::
-   :maxdepth: 1
-   
-   webApplications
-   consoleApps/index
-
-Examples
+Table of Contents
 ------------------
 
-- Console applications
-   * `Program1.cs <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program1.cs>`_ : Simple usage
-   * `Program2.cs <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program2.cs>`_ : Custom configuration
-   * `Program3.cs <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program3.cs>`_ : Using Microsoft.Extensions.Logging and Microsoft.Extensions.DependencyInjection
-   * `Program4.cs <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program4.cs>`_ : A console application which runs periodically
+.. toctree::
+   :maxdepth: 2
+   :includehidden:
 
-- `Web application <https://github.com/logBee-net/serilog-sinks-logbee/tree/main/samples/Serilog.Sinks.LogBee_WebApp>`_
+   web-apps/index
+   console-apps/index
 
-- `Worker service <https://github.com/logBee-net/serilog-sinks-logbee/tree/main/samples/Serilog.Sinks.LogBee_WorkerService>`_

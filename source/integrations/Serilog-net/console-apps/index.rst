@@ -256,6 +256,10 @@ Examples
 * `Custom "Request" properties <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program2.cs>`_
 * `Using Microsoft.Extensions.Logging and Microsoft.Extensions.DependencyInjection <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program3.cs>`_
 * `A console application which runs periodically <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program4.cs>`_
+* `Worker service <https://github.com/logBee-net/serilog-sinks-logbee/tree/main/samples/Serilog.Sinks.LogBee_WorkerService>`_
+
+:doc:`Install instructions </integrations/Serilog-net/console-apps/install-instructions>`
+---------------------------------------------------------------------------------------------------------
 
 .. toctree::
    :hidden:
