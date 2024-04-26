@@ -6,7 +6,9 @@ Console applications using `Serilog <https://github.com/serilog/serilog>`_ can i
 .. code-block:: c#
 
     var log = new LoggerConfiguration()
-        .WriteTo.LogBee(new LogBeeApiKey("_OrganizationId_", "_ApplicationId_", "https://api.logbee.net"))
+        .WriteTo.LogBee(
+            new LogBeeApiKey("_OrganizationId_", "_ApplicationId_", "https://api.logbee.net")
+        )
         .CreateLogger();
 
 .. contents:: Contents
@@ -35,7 +37,7 @@ For this reason, you always need to call ``Log.CloseAndFlush()`` method before t
     }
     finally
     {
-        // send the logs to logBee.net
+        // send the events to logBee.net
         Log.CloseAndFlush();
     }
 
@@ -246,3 +248,16 @@ You can use the ``loggerContext`` to save string contents as files.
 
 .. image:: images/request_file_preview.png
     :alt: Request File preview
+
+Examples
+----------------------------------------------
+
+* `Simple usage <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program1.cs>`_ 
+* `Custom "Request" properties <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program2.cs>`_
+* `Using Microsoft.Extensions.Logging and Microsoft.Extensions.DependencyInjection <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program3.cs>`_
+* `A console application which runs periodically <https://github.com/logBee-net/serilog-sinks-logbee/blob/main/samples/Serilog.Sinks.LogBee_ConsoleApp/Program4.cs>`_
+
+.. toctree::
+   :hidden:
+
+   install-instructions
