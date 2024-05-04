@@ -4,6 +4,27 @@ Change log
 .. contents:: Versions
    :local:
 
+KissLog 5.2.0
+--------------------------
+
+KissLog.AspNetCore 5.2.0 | KissLog.AspNet.Mvc 5.2.0 | KissLog.AspNet.WebApi 5.2.0 | KissLog.CloudListeners 5.2.0
+
+Release date: 03-04-2024
+
+https://github.com/KissLog-net/KissLog.Sdk/releases/tag/v5.2.0
+
+**Improvements**
+
+Updated the target frameworks for the KissLog packages, making them now compatible with:
+
+- net6, net7, net8
+
+- netstandard2.0, netstandard2.1
+
+- net462, net471, net481
+
+Updated and consolidated the dependencies.
+
 KissLog 5.1.2
 --------------------------
 
