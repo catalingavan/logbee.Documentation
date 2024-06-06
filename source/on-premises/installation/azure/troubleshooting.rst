@@ -46,4 +46,4 @@ Once on the Kudu service, navigate to the application files by clicking on "Site
 Need help?
 -------------------------------------------------------
 
-Open a `GitHub issue <https://github.com/logBee-net/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
+Open a `GitHub issue <https://github.com/catalingavan/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
