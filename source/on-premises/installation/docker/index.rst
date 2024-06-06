@@ -31,7 +31,7 @@ To get started running logBee as a Docker container, create the following files:
 .. admonition:: Download Docker files
    :class: note
 
-   Full working example of the files above can be found on `https://github.com/logBee-net/logBee-app <https://github.com/logBee-net/logBee-app/tree/main/Docker>`_.
+   Full working example of the files above can be found on `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app/tree/main/Docker>`_.
 
 .. code-block:: none
     :caption: docker-compose.yml
@@ -45,7 +45,7 @@ To get started running logBee as a Docker container, create the following files:
     
     services:
       backend:
-        image: catalingavan/logbee.backend:6.0.0
+        image: catalingavan/logbee.backend:1.1.0
         container_name: logbee.backend.dev
         restart: unless-stopped
         volumes:
@@ -57,7 +57,7 @@ To get started running logBee as a Docker container, create the following files:
           - "mongodb"
     
       frontend:
-        image: catalingavan/logbee.frontend:6.0.0
+        image: catalingavan/logbee.frontend:1.1.0
         container_name: logbee.frontend.dev
         restart: unless-stopped
         volumes:

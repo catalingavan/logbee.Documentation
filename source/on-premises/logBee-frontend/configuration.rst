@@ -3,7 +3,7 @@ Configuration
 
 logBee.Frontend behavior can be customized by updating the ``Configuration\logBee.json`` file.
 
-A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/logBee-net/logBee-app/blob/main/logBee.Frontend/logBee.json>`_.
+A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/catalingavan/logBee-app/blob/main/logBee.Frontend/logBee.json>`_.
 
 .. contents:: Configuration options
    :local:

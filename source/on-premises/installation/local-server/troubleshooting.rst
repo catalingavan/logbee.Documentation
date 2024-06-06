@@ -21,4 +21,4 @@ Both IIS applications save their internal logs under the \\logs folder. Here sho
 Need help?
 -------------------------------------------------------
 
-Open a `GitHub issue <https://github.com/logBee-net/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
+Open a `GitHub issue <https://github.com/catalingavan/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.

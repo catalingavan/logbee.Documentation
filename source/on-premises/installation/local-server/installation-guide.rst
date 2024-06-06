@@ -13,12 +13,12 @@ Artifacts
 - logBee.Backend-{version}-win-x64.zip
 - logBee.Frontend-{version}-win-x64.zip
 
-Artifacts can be downloaded from `https://github.com/logBee-net/logBee-app <https://github.com/logBee-net/logBee-app>`_.
+Artifacts can be downloaded from `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app>`_.
 
 Services
 ~~~~~~~~~~~~~~~~~~~~~
 
-- IIS Web server with `ASP.NET Core Runtime 6 <https://dotnet.microsoft.com/en-us/download/dotnet/6.0>`_ installed
+- IIS Web server with `ASP.NET Core Runtime 8 <https://dotnet.microsoft.com/en-us/download/dotnet/8.0>`_ installed
 
 - `MongoDB Community Server <https://www.mongodb.com/try/download/community>`_ (version >= 6.0.x)
 
@@ -33,7 +33,7 @@ For instructions installing MongoDB server, please check the `official tutorial 
 IIS web applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1) On the machine hosting the IIS server, install `ASP.NET Core Runtime 6 <https://dotnet.microsoft.com/en-us/download/dotnet/6.0>`_.
+1) On the machine hosting the IIS server, install `ASP.NET Core Runtime 8 <https://dotnet.microsoft.com/en-us/download/dotnet/8.0>`_.
 
 2) Create two IIS applications:
 
@@ -174,9 +174,9 @@ Quick checklist
    | **Important:**
    | Create an empty ``logs`` folder if one does not already exist.
 
-4) If no logs are generated (including no IIS logs), double check that you have `ASP.NET Core Runtime 6 <https://dotnet.microsoft.com/en-us/download/dotnet/6.0>`_ installed.
+4) If no logs are generated (including no IIS logs), double check that you have `ASP.NET Core Runtime 8 <https://dotnet.microsoft.com/en-us/download/dotnet/8.0>`_ installed.
 
 Need help?
 -------------------------------------------------------
 
-Open a `GitHub issue <https://github.com/logBee-net/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
+Open a `GitHub issue <https://github.com/catalingavan/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
