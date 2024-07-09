@@ -5,6 +5,18 @@ Change log
    :local:
    :depth: 1
 
+logBee.Frontend 1.1.2
+--------------------------
+
+Release date: 09-07-2024
+
+https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.1.2
+
+Implemented date-time plugin selector for table filters.
+
+.. figure:: images/change-log/table-date-time-picker.png
+    :alt: date-time plugin selector
+
 logBee.Frontend 1.1.0
 --------------------------
 
