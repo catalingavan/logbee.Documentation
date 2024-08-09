@@ -50,9 +50,9 @@ Install Instructions
 
 3. Access the logger
 
-logbee creates a ``logger`` object that can be accessed using the ``logbee.logger(req)`` function.
+   logbee creates a ``logger`` object that can be accessed using the ``logbee.logger(req)`` function.
 
-Log messages can be created using one of the following logger methods: ``trace``, ``debug``, ``info``, ``warn``, ``error``, ``critical``
+   Log messages can be created using one of the following logger methods: ``trace``, ``debug``, ``info``, ``warn``, ``error``, ``critical``
 
 .. code-block:: javascript
     :caption: index.cs
