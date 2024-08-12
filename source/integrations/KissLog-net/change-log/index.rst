@@ -4,6 +4,27 @@ Change log
 .. contents:: Versions
    :local:
 
+KissLog 5.3.0
+--------------------------
+
+KissLog.AspNetCore 5.3.0 | KissLog.AspNet.Mvc 5.3.0 | KissLog.AspNet.WebApi 5.3.0 | KissLog.CloudListeners 5.3.0
+
+Release date: 12-08-2024
+
+https://github.com/KissLog-net/KissLog.Sdk/releases/tag/v5.3.0
+
+**Improvements**
+
+- set the verbosity of internal logs (such as FileSizeTooLargeException) to Debug, as they were polluting the custom logs created by the application
+
+Example: https://github.com/catalingavan/KissLog.Sdk/blob/master/src/KissLog/LoggerData/FilesContainer.cs#L34
+
+- internal handled errors (such as FileSizeTooLargeException) are now logged as lo
+
+- updated the default endpoint from https://api.kisslog.net to https://api.logbee.net
+
+- updated and consolidated the NuGet dependencies
+
 KissLog 5.2.0
 --------------------------
 
