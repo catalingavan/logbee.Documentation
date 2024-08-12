@@ -15,15 +15,13 @@ https://github.com/KissLog-net/KissLog.Sdk/releases/tag/v5.3.0
 
 **Improvements**
 
-- set the verbosity of internal logs (such as FileSizeTooLargeException) to Debug, as they were polluting the custom logs created by the application
+- Set the verbosity of internal logs (such as FileSizeTooLargeException) to Debug, as they were polluting the custom logs created by the application: https://github.com/catalingavan/KissLog.Sdk/blob/master/src/KissLog/LoggerData/FilesContainer.cs#L34
 
-Example: https://github.com/catalingavan/KissLog.Sdk/blob/master/src/KissLog/LoggerData/FilesContainer.cs#L34
+- Internal handled errors (such as FileSizeTooLargeException) are now logged as lo
 
-- internal handled errors (such as FileSizeTooLargeException) are now logged as lo
+- Updated the default endpoint from https://api.kisslog.net to https://api.logbee.net
 
-- updated the default endpoint from https://api.kisslog.net to https://api.logbee.net
-
-- updated and consolidated the NuGet dependencies
+- Updated and consolidated the NuGet dependencies
 
 KissLog 5.2.0
 --------------------------
