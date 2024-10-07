@@ -5,6 +5,18 @@ Change log
    :local:
    :depth: 1
 
+logBee.Frontend 1.1.6
+--------------------------
+
+Release date: 04-09-2024
+
+https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.1.6
+
+Implemented "Create an alert for this exception" functionality.
+
+.. figure:: images/change-log/create-alert-for-exception-button.png
+    :alt: "Create an alert for this exception" button
+
 logBee.Frontend 1.1.2
 --------------------------
 
