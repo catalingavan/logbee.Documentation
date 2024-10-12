@@ -1,7 +1,7 @@
 Configuration
 =================================
 
-logBee.Frontend behavior can be customized by updating the ``Configuration\logBee.json`` file.
+logbee.Frontend behavior can be customized by updating the ``Configuration\logBee.json`` file.
 
 A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/catalingavan/logBee-app/blob/main/logBee.Frontend/logBee.json>`_.
 
@@ -11,7 +11,7 @@ A full example of the ``logBee.json`` configuration file can be found `here <htt
 LogBeeFrontendDomain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The domain of the logBee.Frontend application. This value is used in multiple places:
+The domain of the logbee.Frontend application. This value is used in multiple places:
 
 - when generating the HTML titles
 - when sending alert emails, as the sender value (``no-reply@logbee.dev``)

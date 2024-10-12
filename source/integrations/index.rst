@@ -13,3 +13,4 @@ Working examples and different use cases can be found on the `logbee-integration
    Serilog
    OpenTelemetry
    ExpressJS
+   KissLog

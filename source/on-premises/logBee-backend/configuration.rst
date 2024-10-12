@@ -1,7 +1,7 @@
 Configuration
 =================================
 
-logBee.Backend behavior can be customized by updating the ``Configuration\logBee.json`` file.
+logbee.Backend behavior can be customized by updating the ``Configuration\logBee.json`` file.
 
 A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/catalingavan/logBee-app/blob/main/logBee.Backend/logBee.json>`_.
 
