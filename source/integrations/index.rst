@@ -7,7 +7,7 @@ Integrations
    :includehidden:
 
    Serilog-net/index
-   KissLog-net/index
-   OpenTelemetry-net/index
+   OpenTelemetry/index
    nodejs-express/index
+   KissLog-net/index
    REST/index
