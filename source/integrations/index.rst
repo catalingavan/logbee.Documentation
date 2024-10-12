@@ -3,7 +3,7 @@ Integrations
 
 Logbee supports multiple integrations with different frameworks or technologies.
 
-Working examples and different use cases can be found on the `logbee-integrations-examples <https://github.com/catalingavan/logbee-integrations-examples>`_ GitHub page.
+`logbee-integrations-examples <https://github.com/catalingavan/logbee-integrations-examples>`_ GitHub repository contains working examples and different use cases for Logbee integrations.
 
 .. toctree::
    :maxdepth: 2
@@ -14,3 +14,4 @@ Working examples and different use cases can be found on the `logbee-integration
    OpenTelemetry
    ExpressJS
    KissLog
+   LogbeeAPI

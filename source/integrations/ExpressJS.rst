@@ -1,7 +1,8 @@
 ExpressJS (Node.js)
 ============================
 
-Node.js applications with ExpressJS can use the ``@logbee/express`` package to send the requests and logs to Logbee.
+| Node.js applications with ExpressJS can use the ``@logbee/express`` package to send the requests and logs to Logbee.
+| `Source repository <https://github.com/catalingavan/logbee-express>`_
 
 .. container::
 

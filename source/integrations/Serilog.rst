@@ -1,7 +1,8 @@
 Serilog (.NET)
 ============================
 
-Logbee integrates with .NET applications using Serilog by registering the ``Serilog.Sinks.Logbee`` sink.
+| Logbee integrates with .NET applications using Serilog by registering the ``Serilog.Sinks.Logbee`` sink.
+| `Source repository <https://github.com/catalingavan/serilog-sinks-logbee>`_
 
 .. container::
 

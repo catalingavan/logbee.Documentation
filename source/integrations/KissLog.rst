@@ -1,7 +1,8 @@
 KissLog (.NET)
 ============================
 
-.NET applications can use the ``KissLog`` NuGet package to save the logs to Logbee.
+| .NET applications can use the ``KissLog`` NuGet package to save the logs to Logbee.
+| `Source repository <https://github.com/catalingavan/KissLog.Sdk>`_
 
 .. container::
 
