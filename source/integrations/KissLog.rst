@@ -4,6 +4,8 @@ KissLog (.NET)
 | .NET applications can use the ``KissLog`` NuGet package to save the logs to Logbee.
 | `Source repository <https://github.com/catalingavan/KissLog.Sdk>`_
 
+Different use cases and examples can be found on the `KissLog integrations page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/KissLog>`_.
+
 .. container::
 
    .. image:: https://img.shields.io/nuget/v/KissLog.svg?style=flat-square&label=KissLog
@@ -21,9 +23,6 @@ KissLog (.NET)
    .. image:: https://img.shields.io/nuget/v/KissLog.AspNet.WebApi.svg?style=flat-square&label=KissLog.AspNet.WebApi
       :target: https://www.nuget.org/packages?q=KissLog.AspNet.WebApi
       :alt: KissLog.AspNet.WebApi
-
-
-Working examples and different use cases can be found on the `KissLog integrations page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/KissLog>`_.
 
 .. code-block:: c#
     :caption: Program.cs

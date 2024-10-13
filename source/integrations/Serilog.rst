@@ -4,6 +4,8 @@ Serilog (.NET)
 | Logbee integrates with .NET applications using Serilog by registering the ``Serilog.Sinks.Logbee`` sink.
 | `Source repository <https://github.com/catalingavan/serilog-sinks-logbee>`_
 
+Different use cases and examples can be found on the `Serilog integrations page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/Serilog>`_.
+
 .. container::
 
    .. image:: https://img.shields.io/nuget/v/Serilog.Sinks.LogBee.svg?style=flat-square&label=Serilog.Sinks.LogBee
@@ -38,5 +40,4 @@ Serilog (.NET)
         Log.CloseAndFlush();
     }
 
-Working examples can be found on the `Serilog integrations page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/Serilog>`_.
 

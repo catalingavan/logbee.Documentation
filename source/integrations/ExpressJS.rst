@@ -4,6 +4,8 @@ ExpressJS (Node.js)
 | Node.js applications with ExpressJS can use the ``@logbee/express`` package to send the requests and logs to Logbee.
 | `Source repository <https://github.com/catalingavan/logbee-express>`_
 
+Working example can be found on the `ExpressJS integration page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/ExpressJS>`_.
+
 .. container::
 
    .. image:: https://img.shields.io/npm/v/@logbee/express.svg?style=flat-square&label=@logbee/express
@@ -40,6 +42,3 @@ ExpressJS (Node.js)
     app.listen(port, () => {
         console.log(`[server]: Server is running at http://localhost:${port}`);
     });
-
-Working example can be found on the `ExpressJS integration page <https://github.com/catalingavan/logbee-integrations-examples/tree/main/ExpressJS>`_.
-
