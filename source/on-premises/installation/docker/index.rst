@@ -1,15 +1,15 @@
 Docker
 =============================
 
-logBee can be run as a Docker application, thanks to `Marcio <https://github.com/zimbres>`_ valuable contribution.
+Logbee can run as a Docker application, thanks to `Marcio <https://github.com/zimbres>`_ valuable contribution.
 
-The official logBee Docker repositories are the following:
+The official Logbee Docker repositories are the following:
 
 - https://hub.docker.com/r/catalingavan/logbee.backend
 
 - https://hub.docker.com/r/catalingavan/logbee.frontend
 
-Running logBee in Docker will automatically install all the necessary prerequisites.
+Running Logbee in Docker will automatically install all the necessary prerequisites.
 
 .. contents:: Table of contents
    :local:
@@ -21,7 +21,7 @@ To get started running logBee as a Docker container, create the following files:
 
 .. code-block:: none
 
-    /logBee_Docker
+    /logbee_Docker
     ├── docker-compose.yml
     ├── backend.appsettings.json
     ├── backend.logbee.json
