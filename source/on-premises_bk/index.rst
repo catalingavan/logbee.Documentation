@@ -1,17 +1,17 @@
-logBee app (on-premises)
+Logbee (on-premises)
 =============================
 
-logBee can be installed on-premises.
+Logbee can be installed on-premises.
 
-Hosting logBee locally, all the logs will be stored and accessible only from within your in-house servers.
+Hosting Logbee locally, all the logs will be stored and accessible only from within your in-house servers.
 
 Artifacts
 ------------------------
 
-- logBee.Backend-{version}-{platform}.zip
-- logBee.Frontend-{version}-{platform}.zip
+- logbee.Backend-{version}-{platform}.zip
+- logbee.Frontend-{version}-{platform}.zip
 
-Artifacts can be downloaded from `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app>`_.
+Artifacts can be downloaded from `logbee-app GitHub page <https://github.com/catalingavan/logbee-app>`_.
 
 Installation prerequisites
 ------------------------------
@@ -43,6 +43,6 @@ Docker
    :includehidden:
 
    installation/index
-   logBee-frontend/index
-   logBee-backend/index
+   logbee-frontend/index
+   logbee-backend/index
 

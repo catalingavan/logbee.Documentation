@@ -5,61 +5,61 @@ Change log
    :local:
    :depth: 1
 
-logBee.Frontend 1.1.6
+logbee.Frontend 1.1.6
 --------------------------
 
 Release date: 04-09-2024
 
-https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.1.6
+https://github.com/catalingavan/logbee-app/releases/tag/logBee.Frontend-v1.1.6
 
 Implemented "Create an alert for this exception" functionality.
 
 .. figure:: images/change-log/create-alert-for-exception-button.png
     :alt: "Create an alert for this exception" button
 
-logBee.Frontend 1.1.2
+logbee.Frontend 1.1.2
 --------------------------
 
 Release date: 09-07-2024
 
-https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.1.2
+https://github.com/catalingavan/logbee-app/releases/tag/logBee.Frontend-v1.1.2
 
 Implemented date-time plugin selector for table filters.
 
 .. figure:: images/change-log/table-date-time-picker.png
     :alt: date-time plugin selector
 
-logBee.Frontend 1.1.0
+logbee.Frontend 1.1.0
 --------------------------
 
 Release date: 06-06-2024
 
-https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.1.0
+https://github.com/catalingavan/logbee-app/releases/tag/logBee.Frontend-v1.1.0
 
 Upgraded the application to .NET 8.0
 
-logBee.Frontend 1.0.1
+logbee.Frontend 1.0.1
 --------------------------
 
 Release date: 15-03-2024
 
-https://github.com/catalingavan/logBee-app/releases/tag/logBee.Frontend-v1.0.1
+https://github.com/catalingavan/logbee-app/releases/tag/logBee.Frontend-v1.0.1
 
 
 Migrating from the legacy KissLog.Frontend
 ---------------------------------------------
 
-If you are currently using the legacy KissLog.Frontend application, upgrading to the new logBee.Frontend application will bring breaking changes to both configuration file and to the database schema.
+If you are currently using the legacy KissLog.Frontend application, upgrading to the new logbee.Frontend application will bring breaking changes to both configuration file and to the database schema.
 
-For the configuration file (KissLog.json -> logBee.json) it is best to use the new configuration file and update the properties with your settings.
+For the configuration file (KissLog.json -> logbee.json) it is best to use the new configuration file and update the properties with your settings.
 
-logBee.Frontend is now using a new database schema incompatible with the previous KissLog.Frontend application.
+logbee.Frontend is now using a new database schema incompatible with the previous KissLog.Frontend application.
 
 To migrate the existing data, please follow these steps:
 
-1. In the logBee.Frontend application, update your database connection string to a new database name, different than the database name used in KissLog.Frontend.
+1. In the logbee.Frontend application, update your database connection string to a new database name, different than the database name used in KissLog.Frontend.
 
-2. Run the logBee.Frontend application for the first time, which will create the empty database (with the new schema).
+2. Run the logbee.Frontend application for the first time, which will create the empty database (with the new schema).
 
 3. Copy the existing data from the old database to the new database, using the following script (MySql language):
 

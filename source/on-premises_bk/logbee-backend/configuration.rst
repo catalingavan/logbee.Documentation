@@ -1,9 +1,9 @@
 Configuration
 =================================
 
-logBee.Backend behavior can be customized by updating the ``Configuration\logBee.json`` file.
+logbee.Backend behavior can be customized by updating the ``Configuration\logbee.json`` file.
 
-A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/catalingavan/logBee-app/blob/main/logBee.Backend/logBee.json>`_.
+A full example of the ``logbee.json`` configuration file can be found `here <https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json>`_.
 
 .. contents:: Configuration options
    :local:
@@ -22,9 +22,9 @@ The Basic HTTP authentication scheme password used to connect to LogBee.Backend 
 LogBeeFrontend.BasicAuth.Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to logBee.Frontend application.
+The Basic HTTP authentication scheme password used to connect to logbee.Frontend application.
 
-This property should have the same value as the same property from ``logBee.Frontend\Configuration\logBee.json``.
+This property should have the same value as the same property from ``logbee.Frontend\Configuration\logbee.json``.
 
 .. code-block:: json
     
@@ -35,18 +35,18 @@ This property should have the same value as the same property from ``logBee.Fron
 LogBeeBackendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logBee.Backend application.
+Root url pointing to logbee.Backend application.
 
 .. code-block:: json
     
     {
-        "LogBeeBackendUrl": "http://logBee-backend.myapp.com/"
+        "LogBeeBackendUrl": "http://logbee-backend.myapp.com/"
     }
 
 LogBeeFrontendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logBee.Frontend application.
+Root url pointing to logbee.Frontend application.
 
 .. code-block:: json
     
@@ -177,11 +177,11 @@ Configuration used to connect to Azure Storage account.
 LogBeeFrontend
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Configuration specific to logBee.Frontend application.
+Configuration specific to logbee.Frontend application.
 
-For better performance, logBee.Backend connects directly to the logBee.Frontend database.
+For better performance, logbee.Backend connects directly to the logbee.Frontend database.
 
-All the values provided here must match the same values specified in ``logBee.Frontend\Configuration\logBee.json``.
+All the values provided here must match the same values specified in ``logbee.Frontend\Configuration\logbee.json``.
 
 .. code-block:: json
     

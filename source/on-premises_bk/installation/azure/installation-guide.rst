@@ -10,10 +10,10 @@ Prerequisites
 Artifacts
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- logBee.Backend-{version}-linux-x64.zip
-- logBee.Frontend-{version}-linux-x64.zip
+- logbee.Backend-{version}-linux-x64.zip
+- logbee.Frontend-{version}-linux-x64.zip
 
-Artifacts can be downloaded from `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app>`_.
+Artifacts can be downloaded from `https://github.com/catalingavan/logbee-app <https://github.com/catalingavan/logbee-app>`_.
 
 Services
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -282,12 +282,12 @@ On the newly created Storage account dashboard, select the "Lifecycle management
 App Services
 ~~~~~~~~~~~~~~~~~~~~~
 
-logBee server uses 2 App Services, one for logBee.Backend application and the second for logBee.Frontend application.
+logBee server uses 2 App Services, one for logbee.Backend application and the second for logbee.Frontend application.
 
-logBee.Backend application is responsible for processing and saving all the logs to Azure Cosmos DB.
+logbee.Backend application is responsible for processing and saving all the logs to Azure Cosmos DB.
 This application is CPU intensive (used for serializing/deserialzing the Azure Cosmos DB records), and uses the RAM memory for the internal queuing system.
 
-logBee.Frontend application is lightweight and is only responsible for displaying the user-interface.
+logbee.Frontend application is lightweight and is only responsible for displaying the user-interface.
 
 In this tutorial we will use for both of the App Services the Free pricing plan.
 However, for a reliable performance and user-experience, you should scale up the App Service plans matching your usage needs. 
@@ -295,14 +295,14 @@ However, for a reliable performance and user-experience, you should scale up the
 .. note::
    Hotizontal scaling is not currently supported by logBee server.
 
-   Both logBee.Backend and logBee.Frontend applications must each be deployed to a single instace.
+   Both logbee.Backend and logbee.Frontend applications must each be deployed to a single instace.
 
 Create App Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We will create two App Services, both with the same configurations:
 
-* logBee-backend
+* logbee-backend
 * logBee-frontend
 
 .. list-table::
@@ -311,7 +311,7 @@ We will create two App Services, both with the same configurations:
    * - Basics
      - 
    * - Name
-     - logBee-backend *(or any value)*
+     - logbee-backend *(or any value)*
    * - Publish
      - Code
    * - Runtime stack
@@ -360,12 +360,12 @@ Initial deployment
 1. Prepare the artifacts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Extract the logBee server artifact archive in a folder. Then, extract both of the resulting archives in two separate folders: `logBee.Backend` and `logBee.Frontend`.
+Extract the logBee server artifact archive in a folder. Then, extract both of the resulting archives in two separate folders: `logbee.Backend` and `logbee.Frontend`.
 
-Update logBee.Backend configuration
+Update logbee.Backend configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the `logBee.Backend` folder, open the configuration file located under ``Configuration\logBee.json`` and update the following properties:
+In the `logbee.Backend` folder, open the configuration file located under ``Configuration\logbee.json`` and update the following properties:
 
 .. list-table::
    :header-rows: 1
@@ -374,8 +374,8 @@ In the `logBee.Backend` folder, open the configuration file located under ``Conf
      - Value
      - Notes
    * - LogBeeBackendUrl
-     - https://logBee-backend.azurewebsites.net
-     - "URL" from the `logBee-backend` App Service
+     - https://logbee-backend.azurewebsites.net
+     - "URL" from the `logbee-backend` App Service
    * - LogBeeFrontendUrl
      - https://logBee-frontend.azurewebsites.net
      - "URL" from the `logBee-frontend` App Service
@@ -395,10 +395,10 @@ In the `logBee.Backend` folder, open the configuration file located under ``Conf
      - DefaultEndpointsProtocol=https;AccountName=xxx;AccountKey=xxx;EndpointSuffix=core.windows.net
      - "Connection string" from the Storage account, "Access keys" section
 
-Update logBee.Frontend configuration
+Update logbee.Frontend configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the `logBee.Frontend` folder, open the configuration file located under ``Configuration\logBee.json`` and update the following properties:
+In the `logbee.Frontend` folder, open the configuration file located under ``Configuration\logbee.json`` and update the following properties:
 
 .. list-table::
    :header-rows: 1
@@ -407,8 +407,8 @@ In the `logBee.Frontend` folder, open the configuration file located under ``Con
      - Value
      - Notes
    * - LogBeeBackendUrl
-     - https://logBee-backend.azurewebsites.net
-     - "URL" from the `logBee-backend` App Service
+     - https://logbee-backend.azurewebsites.net
+     - "URL" from the `logbee-backend` App Service
    * - LogBeeFrontendUrl
      - https://logBee-frontend.azurewebsites.net
      - "URL" from the `logBee-frontend` App Service
@@ -427,10 +427,10 @@ Repeat the steps below for both of the App Services.
 Prepare the artifacts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a ``zip`` archive with the contents of `logBee.Backend` folder.
+Create a ``zip`` archive with the contents of `logbee.Backend` folder.
 
 .. figure:: images/installation-guide/kisslog-backend-artifact.png
-    :alt: logBee.Backend artifact
+    :alt: logbee.Backend artifact
 
 Stop the App Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -440,10 +440,10 @@ Make sure the App Service is stopped before uploading the new code.
 Upload the artifacts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Navigate to logBee.Backend App Service. On top right, click on "Download publish profile" button. Open the downloaded file and copy the ``userName`` and the ``userPWD``.
+Navigate to logbee.Backend App Service. On top right, click on "Download publish profile" button. Open the downloaded file and copy the ``userName`` and the ``userPWD``.
 
 .. figure:: images/installation-guide/publish-profile.png
-    :alt: logBee.Backend artifact
+    :alt: logbee.Backend artifact
 
 | To deploy the application, send a POST request to :samp:`https://<app_name>.scm.azurewebsites.net/api/zipdeploy`.
 | The POST request must contain the .zip file in the message body.
@@ -451,7 +451,7 @@ Navigate to logBee.Backend App Service. On top right, click on "Download publish
 
 .. code-block:: none
 
-   curl -X POST -u $logbee-backend:{password} --data-binary @"<zip_file_path>" https://logBee-backend.scm.azurewebsites.net/api/zipdeploy
+   curl -X POST -u $logbee-backend:{password} --data-binary @"<zip_file_path>" https://logbee-backend.scm.azurewebsites.net/api/zipdeploy
 
 If the update was successful, you will receive a ``200 OK`` response status code.
 
@@ -461,40 +461,40 @@ The artifact can also be deployed with Postman.
     :alt: Postman Authorization
 
 .. figure:: images/installation-guide/postman-zipdeploy-response.png
-    :alt: Uploading logBee.Backend code
+    :alt: Uploading logbee.Backend code
 
-3. Run the logBee.Backend App Service
+3. Run the logbee.Backend App Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After logBee.Backend App Service has been updated, start the App Service then browse to the application URL.
+After logbee.Backend App Service has been updated, start the App Service then browse to the application URL.
 
-If everything went successful, you will see the logBee.Backend home page.
+If everything went successful, you will see the logbee.Backend home page.
 
 .. note::
    | The initial startup is time consuming and can take up to a few minutes.
-   | During the initial startup, logBee.Backend will also create the Azure Cosmos DB database and the containers.
+   | During the initial startup, logbee.Backend will also create the Azure Cosmos DB database and the containers.
 
 .. figure:: images/installation-guide/kisslog-backend-running.png
-    :alt: logBee.Backend home page
+    :alt: logbee.Backend home page
 
-4. Run the logBee.Frontend App Service
+4. Run the logbee.Frontend App Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After logBee.Frontend App Service has been updated, start the App Service then browse to the application URL.
+After logbee.Frontend App Service has been updated, start the App Service then browse to the application URL.
 
-If everything went successful, you will see the logBee.Frontend home page.
+If everything went successful, you will see the logbee.Frontend home page.
 
 .. note::
    | The initial startup is time consuming and can take up to a few minutes.
-   | During the initial startup, logBee.Frontend will also create the SQL database.
+   | During the initial startup, logbee.Frontend will also create the SQL database.
 
 .. figure:: images/installation-guide/kisslog-frontend-running.png
-    :alt: logBee.Frontend home page
+    :alt: logbee.Frontend home page
 
 Post deployment
 -------------------------------------------------------
 
-Your logBee server is running and ready to process the logs. You can update your dotnet applications to start sending the logs to the newly created logBee.Backend AppService.
+Your logBee server is running and ready to process the logs. You can update your dotnet applications to start sending the logs to the newly created logbee.Backend AppService.
 
 Make sure you update the configuration values, respectively the "OrganizationId", "ApplicationId" and "ApiUrl".
 
@@ -503,11 +503,11 @@ Make sure you update the configuration values, respectively the "OrganizationId"
     KissLogConfiguration.Listeners
         .Add(new RequestLogsApiListener(new Application(Configuration["LogBee.OrganizationId"], Configuration["LogBee.ApplicationId"]))
         {
-            ApiUrl = "https://logBee-backend.azurewebsites.net/"
+            ApiUrl = "https://logbee-backend.azurewebsites.net/"
         });
 
 .. figure:: images/installation-guide/kisslog-frontend-logs.png
-    :alt: logBee.Frontend logs
+    :alt: logbee.Frontend logs
 
 Upgrade the services
 -------------------------------------------------------
@@ -516,17 +516,17 @@ In this tutorial we have used the low-pricing tier for all the Azure Services th
 
 - SQL Database: Basic
 - Azure Cosmos DB: 1000 RU/s
-- logBee.Backend App Service: Free F1
-- logBee.Frontend App Service: Free F1
+- logbee.Backend App Service: Free F1
+- logbee.Frontend App Service: Free F1
 
 Although this is enough for the logBee server to start running, the performance and stability of the application is directly affected by the capabilities of the underlying services.
 
-If you experience low performance, you should incrementally scale up the services. The most workload is handled by the Azure Cosmos DB service and by the logBee.Backend App Service, and you can start with them.
+If you experience low performance, you should incrementally scale up the services. The most workload is handled by the Azure Cosmos DB service and by the logbee.Backend App Service, and you can start with them.
 
 .. note::
    Hotizontal scaling is not currently supported by logBee server.
 
-   Both logBee.Backend and logBee.Frontend App Services must each be deployed to a single instace.
+   Both logbee.Backend and logbee.Frontend App Services must each be deployed to a single instace.
 
 Scale up Azure Cosmos DB
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

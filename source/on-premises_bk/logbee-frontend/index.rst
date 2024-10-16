@@ -1,4 +1,4 @@
-logBee.Frontend
+logbee.Frontend
 =================================
 
 .. contents:: Table of contents
@@ -7,16 +7,16 @@ logBee.Frontend
 About
 ------------------------------
 
-logBee.Frontend is a user-interface application used by developers to visualize the captured errors, logs and other metrics data.
+logbee.Frontend is a user-interface application used by developers to visualize the captured errors, logs and other metrics data.
 
-logBee.Frontend is generating the user-interface by consuming logBee.Backend REST endpoints.
+logbee.Frontend is generating the user-interface by consuming logbee.Backend REST endpoints.
 
 Authentication
 ------------------------------
 
-logBee.Frontend uses a JSON Web Token (JWT) for authentication.
+logbee.Frontend uses a JSON Web Token (JWT) for authentication.
 
-The authentication JWT must be signed with the value provided at :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property from the logBee.json configuration file.
+The authentication JWT must be signed with the value provided at :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property from the logbee.json configuration file.
 
 For the default value of ``$.Authorization.HS256Secret``, you can use the following authentication JWT:
 
@@ -36,8 +36,8 @@ The authentication JWT can be created programmatically or online (using https://
 .. figure:: images/generating-authentication-jwt.png
     :alt: Generating authentication JWT
 
-.. figure:: images/logBee.Frontend-login.png
-    :alt: logBee.Frontend login page
+.. figure:: images/logbee.Frontend-login.png
+    :alt: logbee.Frontend login page
 
 
 User name
@@ -69,10 +69,10 @@ Bookmarking this url will allow for a faster login process.
 Azure Active Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If :ref:`$.Authorization.AzureActiveDirectory <on-premises/logBee-frontend/configuration:Authorization.AzureActiveDirectory>` is configured, you can login using the Azure Active Directory OAuth flow.
+If :ref:`$.Authorization.AzureActiveDirectory <on-premises/logbee-frontend/configuration:Authorization.AzureActiveDirectory>` is configured, you can login using the Azure Active Directory OAuth flow.
 
-.. figure:: images/logBee.Frontend-azureActiveDirectory-login.png
-    :alt: logBee.Frontend Azure Active Directory login option
+.. figure:: images/logbee.Frontend-azureActiveDirectory-login.png
+    :alt: logbee.Frontend Azure Active Directory login option
 
 
 .. toctree::

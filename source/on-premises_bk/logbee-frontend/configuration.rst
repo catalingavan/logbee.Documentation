@@ -1,9 +1,9 @@
 Configuration
 =================================
 
-logBee.Frontend behavior can be customized by updating the ``Configuration\logBee.json`` file.
+logbee.Frontend behavior can be customized by updating the ``Configuration\logbee.json`` file.
 
-A full example of the ``logBee.json`` configuration file can be found `here <https://github.com/catalingavan/logBee-app/blob/main/logBee.Frontend/logBee.json>`_.
+A full example of the ``logbee.json`` configuration file can be found `here <https://github.com/catalingavan/logbee-app/blob/main/logbee.Frontend/logbee.json>`_.
 
 .. contents:: Configuration options
    :local:
@@ -11,7 +11,7 @@ A full example of the ``logBee.json`` configuration file can be found `here <htt
 LogBeeFrontendDomain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The domain of the logBee.Frontend application. This value is used in multiple places:
+The domain of the logbee.Frontend application. This value is used in multiple places:
 
 - when generating the HTML titles
 - when sending alert emails, as the sender value (``no-reply@logbee.dev``)
@@ -39,18 +39,18 @@ This property should be changed after an application update in order to invalida
 LogBeeBackendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logBee.Backend application.
+Root url pointing to logbee.Backend application.
 
 .. code-block:: json
     
     {
-        "LogBeeBackendUrl": "http://logBee-backend.myapp.com/"
+        "LogBeeBackendUrl": "http://logbee-backend.myapp.com/"
     }
 
 LogBeeFrontendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logBee.Frontend application.
+Root url pointing to logbee.Frontend application.
 
 .. code-block:: json
     
@@ -61,9 +61,9 @@ Root url pointing to logBee.Frontend application.
 LogBeeBackend.BasicAuth.Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to logBee.Backend application.
+The Basic HTTP authentication scheme password used to connect to logbee.Backend application.
 
-This property should have the same value as the same property from ``logBee.Backend\Configuration\logBee.json``.
+This property should have the same value as the same property from ``logbee.Backend\Configuration\logbee.json``.
 
 .. code-block:: json
     
@@ -74,7 +74,7 @@ This property should have the same value as the same property from ``logBee.Back
 LogBeeFrontend.BasicAuth.Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to logBee.Frontend application.
+The Basic HTTP authentication scheme password used to connect to logbee.Frontend application.
 
 .. code-block:: json
     
@@ -238,14 +238,14 @@ Authorization
        
        The authentication JWT must be signed with the secret provided in this property.
 
-       More details about authentication can be found :ref:`here <on-premises/logBee-frontend/index:authentication>`.
+       More details about authentication can be found :ref:`here <on-premises/logbee-frontend/index:authentication>`.
 
 Authorization.AzureActiveDirectory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Optional configuration used to set up Azure Active Directory authentication.
 
-More details can be found :ref:`here <on-premises/logBee-frontend/index:Azure Active Directory>`.
+More details can be found :ref:`here <on-premises/logbee-frontend/index:Azure Active Directory>`.
 
 .. code-block:: json
     
