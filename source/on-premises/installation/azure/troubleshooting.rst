@@ -6,7 +6,7 @@ Troubleshooting
 
 Some of the common reasons for which the logBee server can fail to run include:
 
-- ``Configuration\logBee.json`` configuration errors
+- ``Configuration\logbee.json`` configuration errors
 - Services connectivity errors (such as SQL, Azure Cosmos DB, Storage accounts)
 - SQL permissions errors
 
@@ -41,9 +41,9 @@ Once on the Kudu service, navigate to the application files by clicking on "Site
     :alt: Application logs folder
 
 .. figure:: images/troubleshooting/kisslog-backend-application-logs.png
-    :alt: logBee.Backend application logs
+    :alt: logbee.Backend application logs
 
 Need help?
 -------------------------------------------------------
 
-Open a `GitHub issue <https://github.com/catalingavan/logBee-app/issues>`_ or send an email to catalingavan@gmail.com.
+Open a `GitHub issue <https://github.com/catalingavan/logbee-app/issues>`_ or send an email to catalingavan@gmail.com.

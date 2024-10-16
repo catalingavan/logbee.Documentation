@@ -7,10 +7,10 @@ Update guide
 Artifacts
 -------------------------------------------------------
 
-- logBee.Backend-{version}-win-x64.zip
-- logBee.Frontend-{version}-win-x64.zip
+- logbee.Backend-{version}-win-x64.zip
+- logbee.Frontend-{version}-win-x64.zip
 
-Artifacts can be downloaded from `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app>`_.
+Artifacts can be downloaded from `https://github.com/catalingavan/logbee-app <https://github.com/catalingavan/logbee-app>`_.
 
 
 Update steps
@@ -18,8 +18,8 @@ Update steps
 
 1) Stop both IIS applications:
 
-   * logBee.Backend
-   * logBee.Frontend
+   * logbee.Backend
+   * logbee.Frontend
 
 Create backup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,60 +29,60 @@ Create backup
    .. code-block:: none
 
        \Backups
-       ├── logBee.Frontend\
-       └── logBee.Backend\
+       ├── logbee.Frontend\
+       └── logbee.Backend\
 
 Copy new files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3) Delete from the **logBee.Backend** folder everything but:
+3) Delete from the **logbee.Backend** folder everything but:
 
    .. code-block:: none
 
-       \logBee.Backend
+       \logbee.Backend
        ├── Configuration\
        ├── appsettings.json
        └── web.config
 
-4) Delete from the **logBee.Frontend** folder everything but:
+4) Delete from the **logbee.Frontend** folder everything but:
 
    .. code-block:: none
 
-       \logBee.Frontend
+       \logbee.Frontend
        ├── Configuration\
        ├── appsettings.json
        └── web.config
 
-5) Extract the contents of ``logBee.Backend.AspNetCore.zip`` to logBee.Backend folder.
+5) Extract the contents of ``logbee.Backend.AspNetCore.zip`` to logbee.Backend folder.
 
    Choose **not to override** the existing files (keep the local files).
 
-6) Extract the contents of ``logBee.Frontend.AspNetCore.zip`` to logBee.Frontend folder.
+6) Extract the contents of ``logbee.Frontend.AspNetCore.zip`` to logbee.Frontend folder.
 
    Choose **not to override** the existing files (keep the local files).
 
-Update logBee.Backend configuration
+Update logbee.Backend configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-7) Apply the configuration changes (if any) by updating logBee.json file.
+7) Apply the configuration changes (if any) by updating logbee.json file.
 
-   The configuration changes will be listed in the :doc:`change log </on-premises/logBee-backend/change-log>`.
+   The configuration changes will be listed in the :doc:`change log </on-premises/logbee-backend/change-log>`.
 
 
-Update logBee.Frontend configuration
+Update logbee.Frontend configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-8) Apply the configuration changes (if any) by updating logBee.json file.
+8) Apply the configuration changes (if any) by updating logbee.json file.
 
-   The configuration changes will be listed in the :doc:`change log </on-premises/logBee-frontend/change-log>`.
+   The configuration changes will be listed in the :doc:`change log </on-premises/logbee-frontend/change-log>`.
 
-9) Change/increment the value of ``"StaticResourcesVersion"`` property from ``logBee.json`` file.
+9) Change/increment the value of ``"StaticResourcesVersion"`` property from ``logbee.json`` file.
 
    This will refresh the browser cache for static resources.
 
    .. code-block:: json
        :emphasize-lines: 3
-       :caption: C:\\inetpub\\wwwroot\\logBee.Frontend\\Configuration\\logBee.json
+       :caption: C:\\inetpub\\wwwroot\\logbee.Frontend\\Configuration\\logbee.json
 
        {
            "LogBeeFrontendDomain": "logBee.dev",
@@ -94,20 +94,20 @@ Start the applications
 
 10) Restart the IIS applications:
 
-    * logBee.Backend
-    * logBee.Frontend
+    * logbee.Backend
+    * logbee.Frontend
 
-11) Make a single request to logBee.Backend root URL (http://logBee-backend.your_domain.com).
+11) Make a single request to logbee.Backend root URL (http://logbee-backend.your_domain.com).
    
-    If everything went successful, you will see the logBee.Backend home page.
+    If everything went successful, you will see the logbee.Backend home page.
    
-    .. figure:: images/installation-guide/logBee.Backend-running.png
-        :alt: logBee.Backend home page
+    .. figure:: images/installation-guide/logbee.Backend-running.png
+        :alt: logbee.Backend home page
 
-12) Make a single request to the logBee.Frontend root URL (http://logBee-frontend.your_domain.com).
+12) Make a single request to the logbee.Frontend root URL (http://logBee-frontend.your_domain.com).
    
     If the startup process went successful, you will see the home page.
    
-    .. figure:: images/installation-guide/logBee.Frontend-running.png
-        :alt: logBee.Frontend home page
+    .. figure:: images/installation-guide/logbee.Frontend-running.png
+        :alt: logbee.Frontend home page
 

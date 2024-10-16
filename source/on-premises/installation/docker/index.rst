@@ -24,14 +24,14 @@ To get started running logBee as a Docker container, create the following files:
     /logBee_Docker
     ├── docker-compose.yml
     ├── backend.appsettings.json
-    ├── backend.logBee.json
+    ├── backend.logbee.json
     ├── frontend.appsettings.json
-    └── frontend.logBee.json
+    └── frontend.logbee.json
 
 .. admonition:: Download Docker files
    :class: note
 
-   Full working example of the files above can be found on `https://github.com/catalingavan/logBee-app <https://github.com/catalingavan/logBee-app/tree/main/Docker>`_.
+   Full working example of the files above can be found on `https://github.com/catalingavan/logbee-app <https://github.com/catalingavan/logbee-app/tree/main/Docker>`_.
 
 .. code-block:: none
     :caption: docker-compose.yml
@@ -45,24 +45,24 @@ To get started running logBee as a Docker container, create the following files:
     
     services:
       backend:
-        image: catalingavan/logbee.backend:1.1.0
+        image: catalingavan/logbee.backend:1.2.1
         container_name: logbee.backend.dev
         restart: unless-stopped
         volumes:
           - ./backend.appsettings.json:/app/appsettings.json
-          - ./backend.logBee.json:/app/Configuration/logBee.json
+          - ./backend.logbee.json:/app/Configuration/logbee.json
         ports:
           - "44088:80"
         links:
           - "mongodb"
     
       frontend:
-        image: catalingavan/logbee.frontend:1.1.0
+        image: catalingavan/logbee.frontend:1.2.1
         container_name: logbee.frontend.dev
         restart: unless-stopped
         volumes:
           - ./frontend.appsettings.json:/app/appsettings.json
-          - ./frontend.logBee.json:/app/Configuration/logBee.json
+          - ./frontend.logbee.json:/app/Configuration/logbee.json
         ports:
           - "44080:80"
         links:
@@ -91,8 +91,8 @@ To start the logBee server and all the necessary prerequisites, use ``docker-com
 
 After all the services have been created, you can access the applications on the following urls:
 
-- logBee.Frontend: http://localhost:44080/
-- logBee.Backend: http://localhost:44088/
+- logbee.Frontend: http://localhost:44080/
+- logbee.Backend: http://localhost:44088/
 
 To authenticate, use the following token:
 
@@ -103,11 +103,11 @@ To authenticate, use the following token:
 
 .. figure:: images/docker-compose-up.png
 
-.. figure:: images/logBee.Frontend-docker.png
+.. figure:: images/logbee.Frontend-docker.png
 
-.. figure:: images/logBee.Frontend-login.png
+.. figure:: images/logbee.Frontend-login.png
 
-.. figure:: images/logBee.Backend-docker.png
+.. figure:: images/logbee.Backend-docker.png
 
 
 Destroy

@@ -43,6 +43,6 @@ Docker
    :includehidden:
 
    installation/index
-   logBee-frontend/index
-   logBee-backend/index
+   logbee-frontend/index
+   logbee-backend/index
 
