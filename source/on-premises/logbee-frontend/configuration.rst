@@ -14,8 +14,8 @@ LogBeeFrontendDomain
 The domain of the logbee.Frontend application. This value is used in multiple places:
 
 - when generating the HTML titles
-- when sending alert emails, as the sender value (``no-reply@logbee.dev``)
 - sets the default email domain for the authenticated users (``user1@logbee.dev``).
+- setting the sender email address to ``no-reply@`` + :ref:`LogBeeFrontendDomain <on-premises/logbee-frontend/configuration:LogBeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``), if no other value is specified under the :ref:`Smtp.Sender <on-premises/logbee-frontend/configuration:Smtp.Sender>` configuration.
 
 .. code-block:: json
     
@@ -193,6 +193,7 @@ SMTP configuration used for sending automated emails (alert notifications).
     
     {
         "Smtp": {
+            "Sender": {},
             "Host": "smtp.sendgrid.net",
             "Port": 587,
             "UserName": "",
@@ -200,6 +201,50 @@ SMTP configuration used for sending automated emails (alert notifications).
             "EnableSsl": false
         }
     }
+
+Smtp.Sender
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ``Smtp.Sender`` configuration is optional and allows for specifying the sender email address.
+
+If not specified (null), the sender email address will default to  ``no-reply@`` + :ref:`LogBeeFrontendDomain <on-premises/logbee-frontend/configuration:LogBeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``).
+
+.. code-block:: json
+    
+    {
+        "Smtp": {
+            "Sender": {
+                "Address": "no-reply@logbee.dev",
+                "DisplayName": "Logbee"
+            }
+        }
+    }
+
+.. admonition:: Troubleshooting emails
+    :class: note
+
+    Even if an email is successfully sent using the configured SMTP service, the delivery can be affected by several factors.
+
+    The reputation of the sender email address (e.g., ``no-reply@your-logbee-domain.com``) plays a significant role in email delivery.
+    Email providers may reject or flag emails from senders with poor reputations.
+
+    **Recommendations:**
+
+    - Use a reputable SMTP service (e.g., SendGrid, Postmark).
+
+    - Ensure your domain is authenticated to improve email delivery.
+
+    - If you have an email address with a good reputation, you can use it under the ``Smtp.Sender.Address`` configuration.
+
+    **Useful links:**
+
+    - `How to Set Up Domain Authentication <https://www.twilio.com/docs/sendgrid/ui/account-and-settings/how-to-set-up-domain-authentication>`_ (SendGrid)
+
+    - `Checking your Sender Score <https://www.senderscore.org/>`_  - Sender Score gives you an idea of how email providers view your IP address, providing insights into how likely your emails are to reach inboxes.
+
+    - `Google Postmaster Tools <https://postmaster.google.com/>`_ - Google's platform to help senders track email performance, including the reputation of your domain and delivery issues.
+
+    - `Google Header Analyzer <https://toolbox.googleapps.com/apps/messageheader/analyzeheader>`_ - can be used to find out how long an email spent in a particular location.
 
 UserInterface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -5,6 +5,26 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 1.2.2
+--------------------------
+
+Release date: 23-10-2024
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v1.2.2
+
+Implemented :ref:`Smtp.Sender <on-premises/logbee-frontend/configuration:Smtp.Sender>` (optional) configuration option.
+
+.. code-block:: json
+    
+    {
+        "Smtp": {
+            "Sender": {
+                "Address": "no-reply@logbee.dev",
+                "DisplayName": "Logbee"
+            }
+        }
+    }
+
 logbee.Frontend 1.1.6
 --------------------------
 
