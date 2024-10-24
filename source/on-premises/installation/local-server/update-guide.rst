@@ -53,11 +53,11 @@ Copy new files
        ├── appsettings.json
        └── web.config
 
-5) Extract the contents of ``logbee.Backend.AspNetCore.zip`` to logbee.Backend folder.
+5) Extract the contents of ``logbee.Backend-{version}-win-x64.zip`` to logbee.Backend folder.
 
    Choose **not to override** the existing files (keep the local files).
 
-6) Extract the contents of ``logbee.Frontend.AspNetCore.zip`` to logbee.Frontend folder.
+6) Extract the contents of ``logbee.Frontend-{version}-win-x64.zip`` to logbee.Frontend folder.
 
    Choose **not to override** the existing files (keep the local files).
 
