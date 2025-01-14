@@ -75,6 +75,31 @@ If :ref:`$.Authorization.AzureActiveDirectory <on-premises/logbee-frontend/confi
     :alt: logbee.Frontend Azure Active Directory login option
 
 
+Setting up Azure Active Directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+**Steps**
+
+\1. In Azure Portal, create a new App registration.
+
+| Under Redirect URI, select Web, and set the URI to the following value:
+| "https://logbee-frontend.myapp.com/signin-oidc" (replace with your logbee-frontend endpoint)
+
+.. note::
+   In order for the Active Directory authentication to work, the logbee-frontend application must be hosted under ``https`` protocol.
+
+.. figure:: images/azure-ad/Create_AppRegistration.png
+    :alt: Creating App registration
+
+\2. Once the application has been created, on the let menu, navigate to "Authentication".
+
+| Set the "Front-channel logout URL" to the followint value:
+| "https://logbee-frontend.myapp.com/signout-oidc" (replace with your logbee-frontend endpoint)
+
+.. figure:: images/azure-ad/AppRegistration_Authentication.png
+    :alt: App registration Authentication
+
 .. toctree::
    :hidden: 
    :maxdepth: 2

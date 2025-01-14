@@ -5,6 +5,15 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 1.3.2
+--------------------------
+
+Release date: 14-01-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v1.3.2
+
+Introduced ``Authorization.AzureActiveDirectory.AuthorizedGroupIds``, which can be used to restrict Active Directory users access to the Logbee application. 
+
 logbee.Frontend 1.3.0
 --------------------------
 
