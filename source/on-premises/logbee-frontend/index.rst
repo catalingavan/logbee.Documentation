@@ -94,11 +94,38 @@ Setting up Azure Active Directory
 
 \2. Once the application has been created, on the let menu, navigate to "Authentication".
 
-| Set the "Front-channel logout URL" to the followint value:
+| Set the "Front-channel logout URL" to the following value:
 | "https://logbee-frontend.myapp.com/signout-oidc" (replace with your logbee-frontend endpoint)
 
 .. figure:: images/azure-ad/AppRegistration_Authentication.png
     :alt: App registration Authentication
+
+\3. Navigate to "Certificates & secrets" and create a new secret.
+
+Copy the secret value under ``$.Authorization.AzureActiveDirectory.ClientSecret`` configuration property.
+
+.. figure:: images/azure-ad/AppRegistration_Secret.png
+    :alt: App registration create Secret
+
+| \4. Update the other ``$.Authorization.AzureActiveDirectory`` configuration properties as following:
+| (replace with values from your App registration)
+
+.. code-block:: json
+
+    {
+        "Authorization": {
+            "AzureActiveDirectory": {
+                "ClientId": "6a4d5ab7-778a-4c49-93b7-a58e4937653e",
+                "ClientSecret": "xXB8_<your_secret>",
+                "Authority": "https://login.microsoftonline.com/509eb0fd-195d-4a0b-9777-951d5944430b/v2.0/",
+                "AuthorizedGroupIds": []
+            }
+        }
+    }
+
+
+.. figure:: images/azure-ad/AppRegistration_Overview.png
+    :alt: App registration overview
 
 .. toctree::
    :hidden: 
