@@ -66,15 +66,6 @@ You can automate the login process by directly passing the Authentication token 
 
 Bookmarking this url will allow for a faster login process.
 
-Azure Active Directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If :ref:`$.Authorization.AzureActiveDirectory <on-premises/logbee-frontend/configuration:Authorization.AzureActiveDirectory>` is configured, you can login using the Azure Active Directory OAuth flow.
-
-.. figure:: images/logbee.Frontend-azureActiveDirectory-login.png
-    :alt: logbee.Frontend Azure Active Directory login option
-
-
 .. toctree::
    :hidden: 
    :maxdepth: 2
@@ -83,3 +74,4 @@ If :ref:`$.Authorization.AzureActiveDirectory <on-premises/logbee-frontend/confi
 
    configuration
    change-log
+   active-directory-auth/index

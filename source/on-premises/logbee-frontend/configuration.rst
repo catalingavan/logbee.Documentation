@@ -290,7 +290,7 @@ Authorization.AzureActiveDirectory
 
 Optional configuration used to set up Azure Active Directory authentication.
 
-More details can be found :ref:`here <on-premises/logbee-frontend/index:Azure Active Directory>`.
+More details about Azure Active Directory authentication can be found :doc:`here </on-premises/logbee-frontend/active-directory-auth/index>`.
 
 .. code-block:: json
     
@@ -299,7 +299,9 @@ More details can be found :ref:`here <on-premises/logbee-frontend/index:Azure Ac
             "AzureActiveDirectory": {
                 "ClientId": "<AD Application (client) ID>",
                 "ClientSecret": "<secret>",
-                "Authority": "https://login.microsoftonline.com/<AD Directory (tenant) ID>/v2.0/"
+                "Authority": "https://login.microsoftonline.com/<AD Directory (tenant) ID>/v2.0/",
+                "AuthorizedGroupIds": ["50679da3-74f4-4592-961c-9423257350dc"]
             }
         }
     }
+

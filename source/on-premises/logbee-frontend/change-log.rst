@@ -5,6 +5,59 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 1.3.3
+--------------------------
+
+Release date: 15-01-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v1.3.3
+
+Introduced ``$.Authorization.AzureActiveDirectory.AuthorizedGroupIds``, which can be used to restrict Active Directory users access to the Logbee.Frontend application. 
+
+More details can be found :doc:`here </on-premises/logbee-frontend/active-directory-auth/user-groups>`.
+
+logbee.Frontend 1.3.0
+--------------------------
+
+Release date: 29-10-2024
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v1.3.0
+
+This release is compatible with :ref:`logbee.Backend-v1.3.0 <on-premises/logbee-backend/change-log:logbee.Backend 1.3.0>` or newer versions.
+
+**Bug fixes**
+
+Fixes ``405 Method Not Allowed`` when trying to delete captured application logs and data. https://stackoverflow.com/questions/4413455/why-does-http-delete-verb-return-405-error-method-not-allowed-for-my-restful-w
+
+**Improvements**
+
+- Implemented caching for applications and organizations, reducing database load.
+
+- Implemented automated job for deleting old emails in the ``EmailQueue`` table.
+
+- Implemented automated job for deleting old local log files.
+
+**Braking changes**
+
+Added ApplicationSettings (required) configuration option. `logbee.json <https://github.com/catalingavan/logbee-app/blob/c370ce6c529302bb9121e0fea37c650803e4a850/logbee.Frontend/logbee.json#L44>`_
+
+.. code-block:: json
+    
+    {
+        "ApplicationSettings": {
+            "CacheApplicationsRepositoryInSeconds": 600,
+            "ProcessEmailsQueueIntervalInSeconds": 30,
+            "DeleteProcessedEmails": {
+                "SentMoreThanNHoursAgo": 12,
+                "TriggerIntervalInMinutes": 60
+            },
+            "DeleteLocalLogFiles": {
+                "CreatedMoreThanNDaysAgo": 3,
+                "TriggerIntervalInHours": 6
+            }
+        }
+    }
+
 logbee.Frontend 1.2.2
 --------------------------
 
