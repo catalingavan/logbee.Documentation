@@ -290,7 +290,7 @@ Authorization.AzureActiveDirectory
 
 Optional configuration used to set up Azure Active Directory authentication.
 
-More details can be found :ref:`here <on-premises/logbee-frontend/index:Azure Active Directory>`.
+More details about Azure Active Directory authentication can be found :doc:`here </on-premises/logbee-frontend/active-directory-auth/index>`.
 
 .. code-block:: json
     
