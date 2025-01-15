@@ -56,3 +56,10 @@ Copy the secret value under ``$.Authorization.AzureActiveDirectory.ClientSecret`
 .. figure:: images/AppRegistration_Overview.png
     :alt: App registration overview
 
+.. toctree::
+   :hidden: 
+   :maxdepth: 2
+   :titlesonly:
+   :includehidden:
+
+   user-groups
