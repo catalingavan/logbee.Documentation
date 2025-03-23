@@ -1,3 +1,3 @@
-# logBee.Documentation
+# logbee.Documentation
 
-This repository contains [Sphinx-based](http://sphinx-doc.org) documentation for [logBee.net](https://logBee.net).
+This repository contains [Sphinx-based](http://sphinx-doc.org) documentation for [logbee.net](https://logbee.net).
