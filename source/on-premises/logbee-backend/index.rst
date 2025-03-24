@@ -1,20 +1,45 @@
-logbee.Backend
+Logbee.Backend
 =================================
 
-.. contents:: Table of contents
-   :local:
+Logbee.Backend is the core service responsible for **storing, managing, and centralizing logs and application metrics**.  
 
-About
-------------------------------
+The backend is designed for **high availability and scalability**, ensuring efficient log processing even under heavy loads.  
 
-logbee.Backend application is responsible for saving and centralizing the logs and other metrics.
+Software applications can send logs to Logbee.Backend through various :doc:`integration </integrations/index>` options.
 
-logbee.Backend exposes REST endpoints which can be used to save and to query the data.
+.. code-block:: c#
+    :caption: .NET application sending logs using Serilog
+
+    using Serilog;
+    using Serilog.Sinks.LogBee;
+
+    Log.Logger = new LoggerConfiguration()
+        .WriteTo.LogBee(new LogBeeApiKey(
+          "_OrganizationId_",
+          "_ApplicationId_",
+          "https://logbee-backend.your_domain.com")
+        )
+        .CreateLogger();
+
+
+.. code-block:: js
+    :caption: Node.js ExpressJS application sending logs using @logbee/express
+
+    const express = require('express');
+    const { logbee } = require('@logbee/express');
+
+    const app = express();
+
+    app.use(logbee.middleware({
+        organizationId: '_OrganizationId_',
+        applicationId: '_ApplicationId_',
+        logbeeApiUri: 'https://logbee-backend.your_domain.com'
+    }));
 
 .. code-block:: none
-   :caption: Creating a request by consuming the REST endpoint:
+   :caption: Sending a request log via REST API:
     
-    POST http://localhost:44088/request-logs
+    POST https://logbee-backend.your_domain.com/request-logs
     {
       "organizationId": "_OrganizationId_",
       "applicationId": "_ApplicationId_",

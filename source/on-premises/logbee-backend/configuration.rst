@@ -107,7 +107,7 @@ Configuration used to connect to Azure Cosmos DB service.
                 "ConnectionString": "https://cosmos-db-name.documents.azure.com:443/;AccountKey=_accountKeyValue_;",
                 "DatabaseName": "LogbeeBackend",
                 "AzureStorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=storagename;AccountKey=_accountKeyValue_;EndpointSuffix=core.windows.net"
-            },
+            }
         }
     }
 
