@@ -129,7 +129,7 @@ FileStorage
 .. list-table::
    :header-rows: 1
 
-   * - Files.Provider
+   * - FileStorage.Provider
      - 
    * - MongoDb
      - Sets the files storage provider to MongoDB.
@@ -139,20 +139,20 @@ FileStorage
 .. list-table::
    :header-rows: 1
 
-   * - Files.MaximumFileSizeInBytes
+   * - FileStorage.MaximumFileSizeInBytes
    * - Specifies the maximum file size (in bytes) which can be uploaded.
 
 .. list-table::
    :header-rows: 1
 
-   * - Files.MongoDb
-   * - Required  when "Files.Provider" is "MongoDb"
+   * - FileStorage.MongoDb
+   * - Required  when "FileStorage.Provider" is "MongoDb"
 
 .. list-table::
    :header-rows: 1
 
-   * - Files.Azure
-   * - Required  when "Files.Provider" is "Azure"
+   * - FileStorage.Azure
+   * - Required  when "FileStorage.Provider" is "Azure"
 
 FileStorage.MongoDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
