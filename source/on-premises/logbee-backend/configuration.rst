@@ -118,7 +118,7 @@ FileStorage
 .. code-block:: json
     
     {
-        "Files": {
+        "FileStorage": {
             "Provider": "MongoDb",
             "MaximumFileSizeInBytes": 2097152,
             "MongoDb": {},
