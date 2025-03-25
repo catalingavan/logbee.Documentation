@@ -1,15 +1,7 @@
 Microsoft Azure
 ============================
 
-Logbee can be hosted in Microsoft Azure.
-
-Prerequisites:
-
-- Azure CosmosDB account
-
-- Storage account
-
-- 2x Web app services (Linux OS)
+In this tutorial we will deploy logBee server on Microsoft Azure.
 
 .. toctree::
    :maxdepth: 2

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'logBee.Documentation'
+project = 'logbee.Documentation'
 copyright = '2024, Catalin Gavan'
 author = 'Catalin Gavan'
 
@@ -67,7 +67,7 @@ html_theme_path = ['_themes']
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_title = "logBee.net documentation"
+html_title = "Logbee documentation"
 
 master_doc = "overview/about"
 
@@ -76,8 +76,8 @@ html_favicon = 'favicon.ico'
 # -- Edit on GitHub -------------------------------------------------
 html_context = {
     'display_github': True,
-    'github_user': 'logBee-net',
-    'github_repo': 'logBee.Documentation',
+    'github_user': 'catalingavan',
+    'github_repo': 'logbee.Documentation',
     'github_version': 'main',
     'conf_py_path': '/source/',
     'source_suffix': '.rst'

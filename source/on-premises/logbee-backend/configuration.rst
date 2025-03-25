@@ -3,7 +3,7 @@ Configuration
 
 logbee.Backend behavior can be customized by updating the ``Configuration\logbee.json`` file.
 
-A full example of the ``logbee.json`` configuration file can be found `here <https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json>`_.
+A full example of the configuration file can be found on the `GitHub <https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json>`_ page.
 
 .. contents:: Configuration options
    :local:

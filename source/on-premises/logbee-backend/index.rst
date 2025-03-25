@@ -1,14 +1,27 @@
 Logbee.Backend
 =================================
 
+About
+------------------------------
+
 Logbee.Backend is the core service responsible for **storing, managing, and centralizing logs and application metrics**.  
 
-The backend is designed for **high availability and scalability**, ensuring efficient log processing even under heavy loads.  
+The service is designed for **high availability and scalability**, ensuring efficient log processing even under heavy loads.  
+
+Logbee.Backend supports two data storage options:
+
+- :ref:`Mongo DB <on-premises/logbee-backend/configuration:Database.MongoDb>`
+
+- :ref:`Azure CosmosDB <on-premises/logbee-backend/configuration:Database.AzureCosmosDb>`
+
+Integration examples
+------------------------------
 
 Software applications can send logs to Logbee.Backend through various :doc:`integration </integrations/index>` options.
 
+**.NET**
+
 .. code-block:: c#
-    :caption: .NET application sending logs using Serilog
 
     using Serilog;
     using Serilog.Sinks.LogBee;
@@ -22,8 +35,9 @@ Software applications can send logs to Logbee.Backend through various :doc:`inte
         .CreateLogger();
 
 
+**Node.js**
+
 .. code-block:: js
-    :caption: Node.js ExpressJS application sending logs using @logbee/express
 
     const express = require('express');
     const { logbee } = require('@logbee/express');
@@ -36,8 +50,10 @@ Software applications can send logs to Logbee.Backend through various :doc:`inte
         logbeeApiUri: 'https://logbee-backend.your_domain.com'
     }));
 
+
+**RESTful API**
+
 .. code-block:: none
-   :caption: Sending a request log via REST API:
     
     POST https://logbee-backend.your_domain.com/request-logs
     {
