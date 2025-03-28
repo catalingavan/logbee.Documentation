@@ -122,8 +122,6 @@ Create a Web App App Service with the following properties:
      - Basic B3 (see notes below)
    * - Image Source
      - Quickstart (we will change this after the resource is created)
-   * - Operating System
-     - Linux
 
 Once the App service has been created, navigate to the **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
@@ -152,8 +150,6 @@ Create a Web App App Service with the following properties:
      - Basic B2 (see notes below)
    * - Image Source
      - Quickstart (we will change this after the resource is created)
-   * - Operating System
-     - Linux
 
 Once the App service has been created, navigate to the **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
@@ -270,7 +266,7 @@ Once the Storage mount has been created, click the **Save** button (the App Serv
 
 By adding the Azure Storage Mount, we can now inject the recently uploaded configuration files in the App Service container.
 
-(Optional) Enable App Service logs
+Enable App Service logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enabling App Service logs will expose the container logs to the host application, allowing for easier troubleshooting issues.
@@ -338,4 +334,126 @@ Once the App Service has been restarted, you shoud now see the Logbee.Backend ap
     :alt: Logbee.Backend App Service running
 
 
+Update Logbee.Frontend App Service
+-------------------------------------------------------
 
+For Logbee.Frontend, follow the same steps as for Logbee.Backend.
+
+Under **Deployment > Deployment Center** menu, **Settings** tab, update the **Config** to the following:
+
+.. code-block:: json
+
+   version: "3.7"
+   services:
+    frontend:
+      image: catalingavan/logbee.frontend:2.0.0
+      init: true
+      restart: unless-stopped
+      volumes:
+       - config-mount:/app/configuration
+      environment:
+       - ASPNETCORE_URLS=http://0.0.0.0:80
+       - LOGBEE_FRONTEND_CONFIGURATION_FILE_PATH=configuration/frontend.logbee.json
+      ports:
+       - "44080:80"
+
+Once the App Service has been restarted, you should now see the Logbee.Frontend application running:
+
+.. figure:: images/logbee-frontend-app-service-running.png
+   :alt: Logbee.Frontend App Service running
+
+Create Storage Mount
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On the Logbee.Frontend App Service, navigate to **Settings > Configuration**, select the **Path mappings** tab, and click the **New Azure Storage Mount** button.
+
+Create a new Azure Storage Mount with the following properties:
+
+.. list-table::
+  :header-rows: 1
+
+  * - Properties
+    - 
+  * - Name
+    - **config-mount**
+  * - Configuration options
+    - Basic
+  * - Storage accounts
+    - **logbeestorage** (select the value from the dropdown list)
+  * - Storage type
+    - Azure Files
+  * - Protocol
+    - SMB
+  * - Storage container
+    - **logbee-config** (select the value from the dropdown list)
+  * - Mount path
+    - **/configuration**
+
+Once the Storage mount has been created, click the **Save** button (the App Service will restart).
+
+Enable App Service logs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enabling App Service logs will expose the container logs to the host application, allowing for easier troubleshooting issues.
+
+On the Logbee.Frontend App Service, navigate to **Monitoring > App Service logs** and update the following properties:
+
+.. list-table::
+  :header-rows: 1
+
+  * - Properties
+    - 
+  * - Application logging
+    - File System
+  * - Quota (MB)
+    - 35
+  * - Retention Period (Days)
+    - 1
+
+Click the **Save** button.
+
+Update the container configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On the Logbee.Frontend App Service, navigate to **Deployment > Deployment Center** and select the **Settings** tab.
+
+Update the following properties:
+
+.. list-table::
+  :header-rows: 1
+
+  * - Properties
+    - 
+  * - Source
+    - Container Registry
+  * - Container type
+    - Docker Compose (Preview)
+  * - Registry source
+    - Docker Hub
+  * - Repository Access
+    - Public
+
+Set the **Config** textarea to the following:
+
+.. code-block:: json
+
+   version: "3.7"
+   services:
+    frontend:
+      image: catalingavan/logbee.frontend:2.0.0
+      init: true
+      restart: unless-stopped
+      volumes:
+       - config-mount:/app/configuration
+      environment:
+       - ASPNETCORE_URLS=http://0.0.0.0:80
+       - LOGBEE_FRONTEND_CONFIGURATION_FILE_PATH=configuration/frontend.logbee.json
+      ports:
+       - "44080:80"
+
+Click the **Save** button and **restart** the App Service for the new changes to be reflected.
+
+Once the App Service has been restarted, you should now see the Logbee.Frontend application running:
+
+.. figure:: images/logbee-frontend-app-service-running.png
+   :alt: Logbee.Frontend App Service running
