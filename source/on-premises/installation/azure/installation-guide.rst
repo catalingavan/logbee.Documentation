@@ -4,9 +4,9 @@ Installation guide
 .. contents:: Table of contents
    :local:
 
-This tutorial will guide trough the installation steps for Logbee in Microsoft Azure.
+This tutorial will guide you through the installation steps for Logbee in Microsoft Azure.
 
-Set up prerequisites
+Installing Prerequisites
 -------------------------------------------------------
 
 Azure Cosmos DB
@@ -24,7 +24,7 @@ Create an Azure Cosmos DB account. Select **Azure Cosmos DB for NoSQL**.
    * - Availability Zones
      - Disable
    * - Location
-     - (Europe) West Europe *<or any appropriate value>*
+     - (Europe) West Europe *(or any appropriate value)*
    * - Capacity mode
      - Provisioned throughput
    * - Apply Free Tier Discount
@@ -103,7 +103,7 @@ Navigate to **Data storage > File shares** and create a new File share.
 Logbee.Backend Web App Service 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a Web App App Service with the following properties:
+Create a App Service Web App with the following properties:
 
 .. list-table::
    :header-rows: 1
@@ -123,7 +123,7 @@ Create a Web App App Service with the following properties:
    * - Image Source
      - Quickstart (we will change this after the resource is created)
 
-Once the App service has been created, navigate to the **Overview** menu and click "Browse".
+After creating the App Service, go to **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
 
 Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
@@ -147,11 +147,11 @@ Create a Web App App Service with the following properties:
    * - Region
      - West Europe (or any appropriate value)
    * - Pricing plan
-     - Basic B2 (see notes below)
+     - Basic B2 (see :ref:`Scaling Up the Services`)
    * - Image Source
      - Quickstart (we will change this after the resource is created)
 
-Once the App service has been created, navigate to the **Overview** menu and click "Browse".
+After creating the App Service, go to **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
 
 Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
@@ -177,7 +177,7 @@ Prepare the configuration files
     
     {
         "LogbeeFrontendConfigurationFilePath": "configuration/frontend.logbee.json",
-        "LogbeeBackendUrl": "https://logbee-backend.azurewebsites.net",
+        "LogbeeBackendUrl": "<Logbee Backend App Service URL>",
         "Database": {
             "Provider": "AzureCosmosDb",
             "AzureCosmosDb": {
@@ -205,7 +205,7 @@ Prepare the configuration files
     
     {
       "LogbeeBackendConfigurationFilePath": "configuration/backend.logbee.json",
-      "LogbeeFrontendUrl": "https://logbee-frontend.azurewebsites.net",
+      "LogbeeFrontendUrl": "<Logbee Frontend App Service URL>",
       "Database": {
         "Provider": "AzureCosmosDb",
         "AzureCosmosDb": {
@@ -232,10 +232,10 @@ Select the ``logbee-config`` file share and upload the two configuration files.
 .. figure:: images/storage-account-logbee-config-file-share.png
     :alt: logbee-config file share
 
-Update Logbee.Backend App Service
+Configure Logbee.Backend App Service
 -------------------------------------------------------
 
-Create Storage Mount
+Create Azure  Storage Mount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the Logbee.Backend App Service, navigate to **Settings > Configuration**, select the **Path mappings** tab and click the **New Azure Storage Mount** button.
@@ -262,7 +262,7 @@ Create a new Azure Storage Mount with the following properties:
    * - Mount path
      - **/configuration**
 
-Once the Storage mount has been created, click the **Save** button (the App Service will restart).
+Once the Azure Storage mount has been created, click the **Save** button (the App Service will restart).
 
 By adding the Azure Storage Mount, we can now inject the recently uploaded configuration files in the App Service container.
 
@@ -310,7 +310,7 @@ Update the following properties:
 
 Set the **Config** textarea to the following:
 
-.. code-block:: json
+.. code-block:: yaml
     
     version: "3.7"
     services:
@@ -328,13 +328,13 @@ Set the **Config** textarea to the following:
 
 Click the **Save** button and **restart** the App Service for the new changes to be refected.
 
-Once the App Service has been restarted, you shoud now see the Logbee.Backend application running:
+Once the App Service has been restarted, Logbee.Backend should now be running:
 
 .. figure:: images/logbee-backend-app-service-running.png
     :alt: Logbee.Backend App Service running
 
 
-Update Logbee.Frontend App Service
+Configure Logbee.Frontend App Service
 -------------------------------------------------------
 
 For Logbee.Frontend, follow the same steps as for Logbee.Backend, with the exception of:
@@ -376,11 +376,29 @@ Troubleshooting
 
 If something does not work as expected, you should find useful information under the App Service logs.
 
-Under the App Service, navigate to **Deplotment > Deployment Center** and select the **Logs** tab.
+Under the App Service, navigate to **Deployment > Deployment Center** and select the **Logs** tab.
 
-Any errors or warnings will be displayed here.
+Any errors or warnings will be displayed here, such as configuration validation errors or Azure CosmosDB connection errors.
 
 Please don't hesitate to contact us if you need help with the installation process.
 
 .. figure:: images/logbee-frontend-logs.png
    :alt: Logbee.Frontend Logs
+
+Scaling Up the Services
+-------------------------------------------------------
+
+In this tutorial, we have used the following configurations:
+
+- **Azure Cosmos DB** with **Provisioned throughput** and **Free Tier** enabled.
+- **Logbee.Backend App Service** with **Basic B3** pricing plan
+- **Logbee.Frontend App Service** with **Basic B2** pricing plan
+
+While these settings allow Logbee to run successfully, the application's performance and stability depend on the capacity of the underlying services.
+
+- **Logbee.Backend App Service** handles most of the heavy processing, as it ingests and processes all incoming logs.
+- **Logbee.Frontend App Service** has a lighter workload, mainly responsible for displaying data.
+- **Azure Cosmos DB** is intensively used for storing and retrieving log data.
+
+If you experience performance issues, consider incrementally scaling up these services.
+Start by increasing the capacity of **Azure Cosmos DB** and the **Logbee.Backend App Service**, as they handle the most workload.
