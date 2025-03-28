@@ -337,11 +337,11 @@ Once the App Service has been restarted, you shoud now see the Logbee.Backend ap
 Update Logbee.Frontend App Service
 -------------------------------------------------------
 
-For Logbee.Frontend, follow the same steps as for Logbee.Backend.
+For Logbee.Frontend, follow the same steps as for Logbee.Backend, with the exception of:
 
 Under **Deployment > Deployment Center** menu, **Settings** tab, update the **Config** to the following:
 
-.. code-block:: json
+.. code-block:: yaml
 
    version: "3.7"
    services:
@@ -362,98 +362,25 @@ Once the App Service has been restarted, you should now see the Logbee.Frontend 
 .. figure:: images/logbee-frontend-app-service-running.png
    :alt: Logbee.Frontend App Service running
 
-Create Storage Mount
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On the Logbee.Frontend App Service, navigate to **Settings > Configuration**, select the **Path mappings** tab, and click the **New Azure Storage Mount** button.
+You can follow the :ref:`Authentication <on-premises/logbee-frontend/index:Authentication>` instructions for generating an authentication token.
 
-Create a new Azure Storage Mount with the following properties:
+If you are using the default ``HS256Secret`` value, you can use the following authentication token:
 
-.. list-table::
-  :header-rows: 1
+.. code-block:: none
 
-  * - Properties
-    - 
-  * - Name
-    - **config-mount**
-  * - Configuration options
-    - Basic
-  * - Storage accounts
-    - **logbeestorage** (select the value from the dropdown list)
-  * - Storage type
-    - Azure Files
-  * - Protocol
-    - SMB
-  * - Storage container
-    - **logbee-config** (select the value from the dropdown list)
-  * - Mount path
-    - **/configuration**
+   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.HP79qro7bvfH7BneUy5jB9Owc_5D2UavFDulRETAl9E
 
-Once the Storage mount has been created, click the **Save** button (the App Service will restart).
+Troubleshooting
+-------------------------------------------------------
 
-Enable App Service logs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If something does not work as expected, you should find useful information under the App Service logs.
 
-Enabling App Service logs will expose the container logs to the host application, allowing for easier troubleshooting issues.
+Under the App Service, navigate to **Deplotment > Deployment Center** and select the **Logs** tab.
 
-On the Logbee.Frontend App Service, navigate to **Monitoring > App Service logs** and update the following properties:
+Any errors or warnings will be displayed here.
 
-.. list-table::
-  :header-rows: 1
+Please don't hesitate to contact us if you need help with the installation process.
 
-  * - Properties
-    - 
-  * - Application logging
-    - File System
-  * - Quota (MB)
-    - 35
-  * - Retention Period (Days)
-    - 1
-
-Click the **Save** button.
-
-Update the container configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-On the Logbee.Frontend App Service, navigate to **Deployment > Deployment Center** and select the **Settings** tab.
-
-Update the following properties:
-
-.. list-table::
-  :header-rows: 1
-
-  * - Properties
-    - 
-  * - Source
-    - Container Registry
-  * - Container type
-    - Docker Compose (Preview)
-  * - Registry source
-    - Docker Hub
-  * - Repository Access
-    - Public
-
-Set the **Config** textarea to the following:
-
-.. code-block:: json
-
-   version: "3.7"
-   services:
-    frontend:
-      image: catalingavan/logbee.frontend:2.0.0
-      init: true
-      restart: unless-stopped
-      volumes:
-       - config-mount:/app/configuration
-      environment:
-       - ASPNETCORE_URLS=http://0.0.0.0:80
-       - LOGBEE_FRONTEND_CONFIGURATION_FILE_PATH=configuration/frontend.logbee.json
-      ports:
-       - "44080:80"
-
-Click the **Save** button and **restart** the App Service for the new changes to be reflected.
-
-Once the App Service has been restarted, you should now see the Logbee.Frontend application running:
-
-.. figure:: images/logbee-frontend-app-service-running.png
-   :alt: Logbee.Frontend App Service running
+.. figure:: images/logbee-frontend-logs.png
+   :alt: Logbee.Frontend Logs
