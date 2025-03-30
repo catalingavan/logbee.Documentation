@@ -5,10 +5,7 @@ Installation guide
    :local:
 
 
-|ico2| This tutorial will guide you through the installation steps for Logbee in Microsoft Azure.
-
-.. |ico2| image:: images/azure-logo.png
-   :height: 32px
+This tutorial will guide you through the installation steps for Logbee in Microsoft Azure.
 
 Installing Prerequisites
 -------------------------------------------------------
@@ -367,6 +364,8 @@ Set the **Config** textarea to the following:
         ports:
           - "44080:80"
 
+The latest version for the ``catalingavan/logbee.backend`` image can be found on https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
+
 Click the **Save** button and **restart** the App Service for the new changes to be refected.
 
 Once the App Service has been restarted, Logbee.Backend should now be running:
@@ -397,6 +396,8 @@ Under **Deployment > Deployment Center** menu, **Settings** tab, update the **Co
        - LOGBEE_FRONTEND_CONFIGURATION_FILE_PATH=configuration/frontend.logbee.json
       ports:
        - "44080:80"
+
+The latest version for the ``catalingavan/logbee.frontend`` image can be found on https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
 
 Once the App Service has been restarted, you should now see the Logbee.Frontend application running:
 
