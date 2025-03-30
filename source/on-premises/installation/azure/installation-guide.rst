@@ -4,7 +4,11 @@ Installation guide
 .. contents:: Table of contents
    :local:
 
-This tutorial will guide you through the installation steps for Logbee in Microsoft Azure.
+
+|ico2| This tutorial will guide you through the installation steps for Logbee in Microsoft Azure.
+
+.. |ico2| image:: images/azure-logo.png
+   :height: 32px
 
 Installing Prerequisites
 -------------------------------------------------------
@@ -42,7 +46,7 @@ Create an Azure Cosmos DB account. Select **Azure Cosmos DB for NoSQL**.
    * - Data Encryption
      - Service-managed key
 
-Once the Azure Cosmos DB account has been created, navigate to **Settings > Keys** and copy the "PRIMARY CONNECTION STRING" to a text editor.
+🗒️ Once the Azure Cosmos DB account has been created, navigate to **Settings > Keys** and copy the "PRIMARY CONNECTION STRING" to a text editor.
 
 .. figure:: images/azure-cosmos-db-connection-string.png
     :alt: Azure Cosmos DB Connection String
@@ -62,7 +66,7 @@ Create a storage account with the following properties:
    * - Storage account name
      - logbeestorage *(or any value)*
    * - Region
-     - (Europe) West Europe *<or any appropriate value>*
+     - (Europe) West Europe *(or any appropriate value)*
    * - Primary service
      - Azure Blob Storage or Azure Data Lake Storage Gen 2
    * - Performance
@@ -78,7 +82,7 @@ Create a storage account with the following properties:
    * - Encryption type
      - Microsoft-managed keys (MMK)
 
-Once the Storage account has been created, navigate to **Security & networking > Access keys** and copy the "Connection string" to a text editor.
+🗒️ Once the Storage account has been created, navigate to **Security & networking > Access keys** and copy the "Connection string" to a text editor.
 
 .. figure:: images/storage-account-access-key.png
     :alt: Storage account Connection string
@@ -100,6 +104,43 @@ Navigate to **Data storage > File shares** and create a new File share.
 .. figure:: images/storage-account-file-share-create.png
     :alt: Storage account Connection string
 
+Navigate to **Data management > Lifecycle management** and create a new Rule.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Properties
+     - 
+   * - Rule name
+     - DeleteLogbeeBlobs
+   * - Rule scope
+     - Apply rule to all blobs in your storage account
+   * - Blob type
+     - Block blobs
+   * - Blob subtype
+     - Base blobs
+
+Under **Base blobs** tab, update the condition as following:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Base blobs
+     - 
+   * - Base blobs were
+     - Last modified
+   * - More than (days ago)
+     - 60 (see note below)
+   * - Then
+     - Delete the blob
+
+.. figure:: images/storage-account-lifecycle-management-base-blobs.png
+    :alt: Storage account lifecycle management
+
+.. note::
+   | Logbee uses Azure Blob Storage for saving Azure Cosmos DB payloads, which helps reducing the Azure Cosmos DB workload.
+   | The value for the **More than (days ago)** property should be equal to (or slightly higher) than the maximum retention period specified under the :ref:`TimeToLive <on-premises/logbee-backend/configuration:TimeToLive>` configuration.
+
 Logbee.Backend Web App Service 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -119,14 +160,14 @@ Create a App Service Web App with the following properties:
    * - Region
      - West Europe (or any appropriate value)
    * - Pricing plan
-     - Basic B3 (see notes below)
+     - Basic B3 (see `scaling up the services <#scaling-up-the-services>`_)
    * - Image Source
      - Quickstart (we will change this after the resource is created)
 
 After creating the App Service, go to **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
 
-Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
+🗒️ Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
 
 Logbee.Frontend Web App Service 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,14 +188,14 @@ Create a Web App App Service with the following properties:
    * - Region
      - West Europe (or any appropriate value)
    * - Pricing plan
-     - Basic B2 (see :ref:`Scaling Up the Services`)
+     - Basic B2 (see `scaling up the services <#scaling-up-the-services>`_)
    * - Image Source
      - Quickstart (we will change this after the resource is created)
 
 After creating the App Service, go to **Overview** menu and click "Browse".
 If everything went ok, you should see a successful web page.
 
-Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
+🗒️ Copy the value of the URL in a text file. The URL should be a value looking like this: ``https://{app-service-name}.azurewebsites.net/``
 
 Prepare the configuration files
 -------------------------------------------------------
@@ -181,7 +222,7 @@ Prepare the configuration files
         "Database": {
             "Provider": "AzureCosmosDb",
             "AzureCosmosDb": {
-                "ApplicationRegion": "West Europe",
+                "ApplicationRegion": "West Europe <"Write Locations" from Azure Cosmos DB>",
                 "ConnectionString": "<Azure Cosmos DB Connection string>",
                 "DatabaseName": "logbee-backend",
                 "AzureStorageAccountConnectionString": "<Storage account Connection string>"
@@ -210,7 +251,7 @@ Prepare the configuration files
         "Provider": "AzureCosmosDb",
         "AzureCosmosDb": {
           "ConnectionString": "<Azure Cosmos DB Connection string>",
-          "ApplicationRegion": "West Europe",
+          "ApplicationRegion": "West Europe <"Write Locations" from Azure Cosmos DB>",
           "DatabaseName": "logbee-frontend",
           "AzureStorageAccountConnectionString": "<Storage account Connection string>"
         }
@@ -378,7 +419,7 @@ If something does not work as expected, you should find useful information under
 
 Under the App Service, navigate to **Deployment > Deployment Center** and select the **Logs** tab.
 
-Any errors or warnings will be displayed here, such as configuration validation errors or Azure CosmosDB connection errors.
+Any errors, such as configuration errors or Azure CosmosDB connection issues will be displayed here.
 
 Please don't hesitate to contact us if you need help with the installation process.
 
