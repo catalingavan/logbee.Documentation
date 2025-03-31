@@ -8,7 +8,7 @@ Change log
 logbee.Frontend 2.0.0
 --------------------------
 
-Release date: 31-03-2025
+Release date: 01-04-2025
 
 https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v2.0.0
 
