@@ -58,7 +58,7 @@ Navigate to the Logbee.Backend App Service and open **Deployment > Deployment Ce
 
 Update the container **Config** by changing the image tag to the latest version.
 
-The latest versions for the Docker container images can be found on https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
+The latest versions of the Docker container images can be found at https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
 
 .. figure:: images/logbee-backend-app-service-update.png
     :alt: Logbee Backend App Service update

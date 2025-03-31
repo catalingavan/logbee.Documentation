@@ -1,9 +1,9 @@
 Configuration
 =================================
 
-logbee.Frontend behavior can be customized by updating the ``Configuration\logbee.json`` file.
+logbee.Frontend functionality can be customized by updating the **Configuration\\logbee.json** file.
 
-A full example of the configuration file can be found on the `GitHub <https://github.com/catalingavan/logbee-app/blob/main/logbee.Frontend/logbee.json>`_ page.
+A full example of the configuration file can be found on https://github.com/catalingavan/logbee-app/blob/main/logbee.Frontend/logbee.json.
 
 .. contents:: Configuration options
    :local:

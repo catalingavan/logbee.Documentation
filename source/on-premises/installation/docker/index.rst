@@ -1,7 +1,7 @@
 Docker
 =============================
 
-Logbee can run as a Docker application, thanks to `Marcio <https://github.com/zimbres>`_ valuable contribution.
+Logbee can run as a Docker application, thanks to the valuable contribution of `Marcio <https://github.com/zimbres>`_.
 
 The official Logbee Docker images are:
 
@@ -17,7 +17,7 @@ Running Logbee in Docker will automatically install all the necessary prerequisi
 Docker files
 -------------------------------------------------------
 
-To get started running Logbee as a Docker container, create the following files:
+To run Logbee as a Docker container, create the following files in the specified directory structure:
 
 .. code-block:: none
 
@@ -26,9 +26,9 @@ To get started running Logbee as a Docker container, create the following files:
     ├── backend.logbee.json
     └── frontend.logbee.json
 
-A full working example for the Logbee docker configuration files can be found on https://github.com/catalingavan/logbee-app/tree/main/Docker.
+A full working example of the Logbee Docker configuration files can be found at https://github.com/catalingavan/logbee-app/tree/main/Docker.
 
-The latest versions for the Docker container images can be found on https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
+The latest versions of the Docker container images can be found at https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
 
 .. code-block:: none
     :caption: docker-compose.yml
@@ -89,36 +89,39 @@ The latest versions for the Docker container images can be found on https://gith
       mongo-data:
       mongo-config:
 
-
 Build
 -------------------------------------------------------
 
-To start the Logbee containers and all the necessary prerequisites, use ``docker compose up -d`` command.
+To start the Logbee containers along with all necessary prerequisites, run the following command:
 
 .. code-block:: none
 
     C:\logbee-app\Docker> docker compose up -d
+
+This command will create and start the containers for Logbee.Backend, Logbee.Frontend and MongoDB.
 
 .. figure:: images/docker-compose-up.png
    :alt: docker compose up
 
 After all the services have been created, you can access the applications using the following URLs:
 
-**Logbee.Frontend**: http://localhost:44080/
+- **Logbee.Frontend**: http://localhost:44080/
 
 .. figure:: images/logbee-frontend.png
    :alt: Logbee.Frontend running as Docker container
 
-**Logbee.Backend**: http://localhost:44088/
+- **Logbee.Backend**: http://localhost:44088/
 
 .. figure:: images/logbee-backend.png
    :alt: Logbee.Backend running as Docker container
 
 You can follow the :ref:`Authentication <on-premises/logbee-frontend/index:Authentication>` instructions for generating an authentication token.
 
-If you are using the default ``HS256Secret`` value, you can use the following authentication token:
+If the default ``HS256Secret`` value is being used, the following authentication token can be used for testing purposes:
 
 .. code-block:: none
 
    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.HP79qro7bvfH7BneUy5jB9Owc_5D2UavFDulRETAl9E
-  
+
+.. note::
+   The above token is for demonstration purposes only. Replace it with a valid token generated using your own secret key for production environments.

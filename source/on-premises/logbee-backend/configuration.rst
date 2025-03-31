@@ -1,9 +1,9 @@
 Configuration
 =================================
 
-logbee.Backend behavior can be customized by updating the ``Configuration\logbee.json`` file.
+logbee.Backend functionality can be customized by updating the **Configuration\\logbee.json** file.
 
-A full example of the configuration file can be found on the `GitHub <https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json>`_ page.
+A full example of the configuration file can be found on https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json.
 
 .. contents:: Configuration options
    :local:
@@ -22,7 +22,7 @@ The path to the Logbee.Frontend configuration file. The value can be absolute or
 LogbeeBackendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to Logbee.Backend application.
+The root URL pointing to the Logbee.Backend application.
 
 .. code-block:: json
     
@@ -80,7 +80,7 @@ Database
 Database.MongoDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration used to connect to MongoDB server.
+Configuration settings for connecting to the MongoDB server.
 
 .. code-block:: json
     
@@ -96,7 +96,7 @@ Configuration used to connect to MongoDB server.
 Database.AzureCosmosDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration used to connect to Azure Cosmos DB service.
+Configuration settings for connecting to Azure Cosmos DB.
 
 .. code-block:: json
     
@@ -215,7 +215,7 @@ CreateRequestLog
    * - CreateRequestLog.SaveInputStreamAsFileIfLengthGte
    * - If Request.InputStream content exceeds the length defined here, the value will be saved as a blob file.
        
-       This helps prevent saving excesive large objects in database.
+       This helps prevent saving excessively large objects in the database.
 
 CreateRequestLog.Ignore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

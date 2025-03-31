@@ -5,6 +5,57 @@ Change log
    :local:
    :depth: 1
 
+logbee.Backend 2.0.0
+--------------------------
+
+Release date: 31-03-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.0.0
+
+**Improvements:**
+
+- The application has been refactored to fully support a containerized architecture.
+
+- Completely redesigned the Azure implementation and deployment process, making it more efficient and easier to set up.
+
+**Configuration breaking changes:**
+
+- Added required :ref:`LogbeeBackendConfigurationFilePath <on-premises/logbee-backend/configuration:LogbeeBackendConfigurationFilePath>` configuration property.
+
+.. code-block:: json
+    
+    {
+        "LogbeeFrontendConfigurationFilePath": "../../logbee.frontend/Configuration/logbee.json"
+    }
+
+- ``"Files"`` property has been renamed to ``"FileStorage"``
+
+- Added :ref:`FileStorage.MongoDb <on-premises/logbee-backend/configuration:FileStorage.MongoDb>` configuration property which is required when ``FileStorage.Provider = "MongoDb"``
+
+.. code-block:: json
+    
+    {
+        "FileStorage": {
+            "Provider": "MongoDb",
+            "MongoDb": {
+               "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
+               "DatabaseName": "LogbeeBackend"
+            }
+        }
+    }
+
+**Configuration changes:**
+
+- Removed the following properties:
+
+.. code-block:: json
+    
+    {
+        "LogbeeFrontendUrl": "http://logbee-frontend.your_domain.com",
+        "LogbeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_"
+    }
+
+
 logbee.Backend 1.3.0
 --------------------------
 

@@ -11,7 +11,7 @@ Artifacts
 - logbee.Backend-{version}-{platform}.zip
 - logbee.Frontend-{version}-{platform}.zip
 
-Artifacts can be downloaded from `logbee-app GitHub page <https://github.com/catalingavan/logbee-app>`_.
+Artifacts can be downloaded from https://github.com/catalingavan/logbee-app/releases page.
 
 Installation prerequisites
 ------------------------------
@@ -20,15 +20,14 @@ Local server
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - IIS Web server with `ASP.NET Core Runtime 8 <https://dotnet.microsoft.com/en-us/download/dotnet/8.0>`_ installed
-- `MongoDB Community Server <https://www.mongodb.com/try/download/community>`_ (version >= 6.0.x)
+- `MongoDB Community Server <https://www.mongodb.com/try/download/community>`_ (version >= 8.0.x)
 
 Microsoft Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- SQL Database
 - Azure Cosmos DB
-- Storage account
-- 2x App Services
+- Azure Storage account
+- 2x App Services (Web App)
 
 Docker
 ~~~~~~~~~~~~~~~~~~~~~~~~

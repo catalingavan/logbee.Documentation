@@ -5,6 +5,58 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 2.0.0
+--------------------------
+
+Release date: 31-03-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v2.0.0
+
+This release is compatible with :ref:`logbee.Backend-v2.0.0 <on-premises/logbee-backend/change-log:logbee.Backend 2.0.0>` or newer versions.
+
+**Improvements:**
+
+- The application has been refactored to fully support a containerized architecture.
+
+- Completely redesigned the Azure implementation and deployment process, making it more efficient and easier to set up.
+
+**Configuration breaking changes:**
+
+- Added required :ref:`LogbeeBackendConfigurationFilePath <on-premises/logbee-frontend/configuration:LogbeeBackendConfigurationFilePath>` configuration property.
+
+.. code-block:: json
+    
+    {
+        "LogbeeBackendConfigurationFilePath": "../../logbee.backend/Configuration/logbee.json"
+    }
+
+**Configuration changes:**
+
+- Removed the following properties:
+
+.. code-block:: json
+    
+    {
+        "LogbeeBackendUrl": "http://logbee-backend.your_domain.com",
+        "LogbeeBackend.BasicAuth.Password": "_LogBeeBackend_authorization_password_"
+    }
+
+- Logbee.Frontend now supports Azure Cosmos DB integration through the :ref:`AzureCosmosDb <on-premises/logbee-frontend/configuration:Database.AzureCosmosDb>` configuration option.
+
+.. code-block:: json
+    
+    {
+        "Database": {
+            "Provider": "AzureCosmosDb",
+            "AzureCosmosDb": {
+                "ApplicationRegion": "West Europe",
+                "ConnectionString": "https://cosmos-db-name.documents.azure.com:443/;AccountKey=_accountKeyValue_;",
+                "DatabaseName": "LogbeeFrontend",
+                "AzureStorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=storagename;AccountKey=_accountKeyValue_;EndpointSuffix=core.windows.net"
+            }
+        }
+    }
+
 logbee.Frontend 1.3.3
 --------------------------
 
