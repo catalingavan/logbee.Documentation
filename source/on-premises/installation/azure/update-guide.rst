@@ -1,98 +1,75 @@
 Update guide
-=============================
+========================
 
 .. contents:: Table of contents
    :local:
 
-Prerequisites
+Since Logbee uses a containerized architecture, the update process is straightforward.
+
+Stop the App Services
 -------------------------------------------------------
 
-Artifacts
-~~~~~~~~~~~~~~~~~~~~~~~
+Stop both of the App Services to avoid conflicts during the update process.
 
-- logbee.Backend-{version}-linux-x64.zip
-- logbee.Frontend-{version}-linux-x64.zip
-
-Artifacts can be downloaded from `https://github.com/catalingavan/logbee-app <https://github.com/catalingavan/logbee-app>`_.
-
-Update the applications
+Download existing configuration
 -------------------------------------------------------
 
-Repeat the steps below for both of the App Services. Start with logbee.Backend followed by logbee.Frontend.
-
-1. Download the existing configuration file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Navigate on the App Service overview page. On the left menu under "Development Tools", click on the "Advanced Tools", then click on the "Go" link. This will open the Azure Kudu service.
-
-Once on the Kudu service, navigate to the application files by clicking on "Site wwwroot" link.
-
-The configuration file is located under ``Configuration/logbee.json``. Copy this file locally.
-
-.. figure:: images/update-guide/kisslog-backend-kudu-service.png
-    :alt: Kudu Service
-
-.. figure:: images/update-guide/kisslog-backend-configuration-file.png
-    :alt: Configuration file
-
-2. Update the configuration file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Apply the configuration changes (if any) by updating logbee.json file.
-
-The configuration changes will be listed in the :doc:`change log </on-premises/logbee-backend/change-log>`.
-
-3. Prepare the artifacts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Extract the LogBee server artifact archive in a folder. Then, extract both of the resulting archives in two separate folders: `logbee.Backend` and `logbee.Frontend`.
-
-Replace the ``logbee.Backend\Configuration\logbee.json`` with the existing configuration file.
-
-Create a ``zip`` archive with the contents of the `logbee.Backend` folder.
-
-4. Upload the new code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Make sure the App Service is stopped before uploading the new code.
-
-Navigate to logbee.Backend App Service. On top right, click on "Download publish profile" button. Open the downloaded file and copy the ``userName`` and the ``userPWD``.
-
-.. figure:: images/installation-guide/publish-profile.png
-    :alt: logbee.Backend artifact
-
-| To deploy the application, send a POST request to :samp:`https://<app_name>.scm.azurewebsites.net/api/zipdeploy`.
-| The POST request must contain the .zip file in the message body.
-| Set the Basic Authentication header with the Username and Password values copied from the PublishProfile.
+Under the Azure Storage account, go to the **logbee-config** File share and download the existing configuration files.
 
 .. code-block:: none
 
-   curl -X POST -u $logbee-backend:{password} --data-binary @"<zip_file_path>" https://logbee-backend.scm.azurewebsites.net/api/zipdeploy
+    /logbee-config
+    ├── backend.logbee.json
+    └── frontend.logbee.json
 
-If the update was successful, you will receive a ``200 OK`` response status code.
+.. figure:: images/storage-account-logbee-config-file-share.png
+    :alt: logbee-config file share
 
-The new code can also be deployed with Postman.
+Apply configuration changes
+-------------------------------------------------------
 
-.. figure:: images/installation-guide/postman-zipdeploy-authorization.png
-    :alt: Postman Authorization
+Update the **backend.logbee.json** file by applying the configuration changes (if any).
 
-.. figure:: images/installation-guide/postman-zipdeploy-response.png
-    :alt: Uploading logbee.Backend code
+The configuration changes will be listed in the :doc:`Logbee.Backend change log </on-premises/logbee-backend/change-log>`.
 
-5. Run the logbee.Backend App Service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Update the **frontend.logbee.json** file by applying the configuration changes (if any).
 
-After logbee.Backend App Service has been updated, start the App Service then browse to the application URL.
+The configuration changes will be listed in the :doc:`Logbee.Frontend change log </on-premises/logbee-frontend/change-log>`.
 
-If everything went successful, you will see the logbee.Backend home page.
+Regardless of whether there are any changes for Logbee.Frontend, you need to increment the value of the ``"StaticResourcesVersion"`` property in the **frontend.logbee.json** file.
 
-.. note::
-   | The initial startup is time consuming and can take up to a few minutes.
+.. code-block:: json
+    
+    {
+      "StaticResourcesVersion": "2.0.1"
+    }
 
-.. figure:: images/installation-guide/kisslog-backend-running.png
-    :alt: logbee.Backend home page
+This change ensures that browsers fetch the latest static resources, avoiding issues caused by cached files.
 
-6. Repeat the steps above for logbee.Frontend
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upload the configuration files
+-------------------------------------------------------
 
-Repeat the steps above for the logbee.Frontend App Service, starting with step 1.
+Upload the updated configuration files to the **logbee-config** File share.
+
+Update the containers configuration
+-------------------------------------------------------
+
+Navigate to the Logbee.Backend App Service and open **Deployment > Deployment Center**.
+
+Update the container **Config** by changing the image tag to the latest version.
+
+The latest versions of the Docker container images can be found at https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
+
+.. figure:: images/logbee-backend-app-service-update.png
+    :alt: Logbee Backend App Service update
+
+Repeat the same steps for the Logbee.Frontend App Service.
+
+Start the App Services
+-------------------------------------------------------
+
+Start the App Services in the following order:
+
+1. Start the **Logbee.Backend App Service**.
+
+2. Start the **Logbee.Frontend App Service**.

@@ -1,41 +1,28 @@
 Configuration
 =================================
 
-logbee.Backend behavior can be customized by updating the ``Configuration\logbee.json`` file.
+logbee.Backend functionality can be customized by updating the **Configuration\\logbee.json** file.
 
-A full example of the ``logbee.json`` configuration file can be found `here <https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json>`_.
+A full example of the configuration file can be found on https://github.com/catalingavan/logbee-app/blob/main/logbee.Backend/logbee.json.
 
 .. contents:: Configuration options
    :local:
 
-LogBeeBackend.BasicAuth.Password
+LogbeeFrontendConfigurationFilePath
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to LogBee.Backend application.
+The path to the Logbee.Frontend configuration file. The value can be absolute or relative.
 
 .. code-block:: json
     
     {
-        "LogBeeBackend.BasicAuth.Password": "_LogBeeBackend_authorization_password_"
+        "LogbeeFrontendConfigurationFilePath": "../../logbee.Frontend/Configuration/logbee.json"
     }
 
-LogBeeFrontend.BasicAuth.Password
+LogbeeBackendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to logbee.Frontend application.
-
-This property should have the same value as the same property from ``logbee.Frontend\Configuration\logbee.json``.
-
-.. code-block:: json
-    
-    {
-        "LogBeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_"
-    }
-
-LogBeeBackendUrl
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Root url pointing to logbee.Backend application.
+The root URL pointing to the Logbee.Backend application.
 
 .. code-block:: json
     
@@ -43,15 +30,16 @@ Root url pointing to logbee.Backend application.
         "LogBeeBackendUrl": "http://logbee-backend.myapp.com/"
     }
 
-LogBeeFrontendUrl
+
+LogbeeBackend.BasicAuth.Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logbee.Frontend application.
+The Basic HTTP authentication scheme password used to connect to Logbee.Backend application.
 
 .. code-block:: json
     
     {
-        "LogBeeFrontendUrl": "http://logBee.myapp.com/"
+        "LogbeeBackend.BasicAuth.Password": "_LogbeeBackend_authorization_password_"
     }
 
 Database
@@ -92,15 +80,15 @@ Database
 Database.MongoDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration used to connect to MongoDB server.
+Configuration settings for connecting to the MongoDB server.
 
 .. code-block:: json
     
     {
         "Database": {
             "MongoDb": {
-                "ConnectionString": "mongodb://localhost:27017",
-                "DatabaseName": "LogBeeBackendDatabase"
+                "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
+                "DatabaseName": "LogbeeBackend"
             },
         }
     }
@@ -108,30 +96,32 @@ Configuration used to connect to MongoDB server.
 Database.AzureCosmosDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configuration used to connect to Azure Cosmos DB service.
+Configuration settings for connecting to Azure Cosmos DB.
 
 .. code-block:: json
     
     {
         "Database": {
             "AzureCosmosDb": {
-                "ConnectionString": "AccountEndpoint=https://logbee-database-nosql.documents.azure.com:443/;AccountKey={_your_account_key_};",
                 "ApplicationRegion": "West Europe",
-                "DatabaseName": "LogBeeBackendDatabase"
-            },
+                "ConnectionString": "https://cosmos-db-name.documents.azure.com:443/;AccountKey=_accountKeyValue_;",
+                "DatabaseName": "LogbeeBackend",
+                "AzureStorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=storagename;AccountKey=_accountKeyValue_;EndpointSuffix=core.windows.net"
+            }
         }
     }
 
 
-Files
+FileStorage
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: json
     
     {
-        "Files": {
+        "FileStorage": {
             "Provider": "MongoDb",
             "MaximumFileSizeInBytes": 2097152,
+            "MongoDb": {},
             "Azure": {}
         }
     }
@@ -139,7 +129,7 @@ Files
 .. list-table::
    :header-rows: 1
 
-   * - Files.Provider
+   * - FileStorage.Provider
      - 
    * - MongoDb
      - Sets the files storage provider to MongoDB.
@@ -149,16 +139,38 @@ Files
 .. list-table::
    :header-rows: 1
 
-   * - Files.MaximumFileSizeInBytes
+   * - FileStorage.MaximumFileSizeInBytes
    * - Specifies the maximum file size (in bytes) which can be uploaded.
 
 .. list-table::
    :header-rows: 1
 
-   * - Files.Azure
-   * - Required  when "Files.Provider" is "Azure"
+   * - FileStorage.MongoDb
+   * - Required  when "FileStorage.Provider" is "MongoDb"
 
-Files.Azure
+.. list-table::
+   :header-rows: 1
+
+   * - FileStorage.Azure
+   * - Required  when "FileStorage.Provider" is "Azure"
+
+FileStorage.MongoDb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configuration for saving file blobs to MongoDb.
+
+.. code-block:: json
+    
+    {
+        "FileStorage": {
+            "MongoDb": {
+                "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
+                "DatabaseName": "LogbeeBackend"
+            }
+        }
+    }
+
+FileStorage.Azure
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Configuration used to connect to Azure Storage account.
@@ -166,65 +178,12 @@ Configuration used to connect to Azure Storage account.
 .. code-block:: json
     
     {
-        "Files": {
+        "FileStorage": {
             "Azure": {
-                "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=myfilesstorage;AccountKey=A889wNrmGpz74rT5kNg53VB==;EndpointSuffix=core.windows.net"
+                "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=storagename;AccountKey=_accountKeyValue_;EndpointSuffix=core.windows.net"
             }
         }
     }
-
-
-LogBeeFrontend
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Configuration specific to logbee.Frontend application.
-
-For better performance, logbee.Backend connects directly to the logbee.Frontend database.
-
-All the values provided here must match the same values specified in ``logbee.Frontend\Configuration\logbee.json``.
-
-.. code-block:: json
-    
-    {
-        "LogBeeFrontend": {
-            "Database": {}
-        }
-    }
-
-LogBeeFrontend.Database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: json
-    
-    {
-        "LogBeeFrontend": {
-            "Database": {
-                "Provider": "MongoDb",
-                "MySql": {
-                    "ConnectionString": "server=localhost;port=3306;database=LogBeeFrontend;uid=<replace_user>;password=<replace_password>;Charset=utf8;"
-                },
-                "SqlServer": {
-                    "ConnectionString": "Server=localhost;Database=LogBeeFrontend;User ID=<replace_user>;Password=<replace_password>;TrustServerCertificate=True;"
-                },
-                "MongoDb": {
-                    "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
-                    "DatabaseName": "LogBeeFrontend"
-                }
-            }
-        }
-    }
-
-.. list-table::
-   :header-rows: 1
-
-   * - LogBeeFrontend.Database.Provider
-     - 
-   * - MySql
-     - Sets the LogBee.Frontend database provider to MySql.
-   * - SqlServer
-     - Sets the LogBee.Frontend provider to MS-SQL.
-   * - MongoDb
-     - Sets the LogBee.Frontend provider to MongoDb.
 
 CreateRequestLog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -256,7 +215,7 @@ CreateRequestLog
    * - CreateRequestLog.SaveInputStreamAsFileIfLengthGte
    * - If Request.InputStream content exceeds the length defined here, the value will be saved as a blob file.
        
-       This helps prevent saving excesive large objects in database.
+       This helps prevent saving excessively large objects in the database.
 
 CreateRequestLog.Ignore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -586,32 +545,6 @@ The time to live value can be specified in ``Days``, ``Hours`` or ``Minutes``.
         }
     }
 
-UserAgentParserProvider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Sets the provider which is used to parse the User-Agent header and display additional information about the Browser/OS.
-
-.. figure:: images/UserAgentParser.png
-    :alt: UserAgentParserProvider
-
-.. code-block:: json
-    
-    {
-        "UserAgentParserProvider": null
-    }
-
-.. list-table::
-   :header-rows: 1
-
-   * - UserAgentParserProvider
-     - 
-   * - | null
-       | (recommended)
-     - The functionality of parsing the user-agent is disabled.
-   * - DeviceDetectorNet
-     - | Uses the `DeviceDetector.NET <https://github.com/totpero/DeviceDetector.NET>`_ user-agent parser.
-       | This provider tends to be relatively slow and can cause performance degradation for applications processing large volumes of logs.
-
 ApplicationSettings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -623,6 +556,7 @@ ApplicationSettings.DeleteApplicationDataByExpiryDate
     {
         "ApplicationSettings": {
             "DeleteApplicationDataByExpiryDate": {
+                "MaximumDurationInMilliseconds": 5000,
                 "TriggerIntervalInMinutes": 180
             }
         }
@@ -642,6 +576,7 @@ ApplicationSettings.ProcessQueues
     {
         "ApplicationSettings": {
             "ProcessQueues": {
+                "MaximumDurationInMilliseconds": 5000,
                 "TriggerIntervalInSeconds": 10,
                 "Take": 100
             }
@@ -668,6 +603,7 @@ ApplicationSettings.ProcessAlerts
     {
         "ApplicationSettings": {
             "ProcessAlerts": {
+                "MaximumDurationInMilliseconds": 5000,
                 "TriggerIntervalInSeconds": 10
             }
         }
@@ -678,3 +614,29 @@ ApplicationSettings.ProcessAlerts
 
    * - ProcessAlerts.TriggerIntervalInSeconds
    * - Specifies the interval in which the alerts are evaluated against the received request logs.
+
+ApplicationSettings.DeleteLocalLogFiles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: json
+    
+    {
+        "ApplicationSettings": {
+            "DeleteLocalLogFiles": {
+                "CreatedMoreThanNDaysAgo": 3,
+                "TriggerIntervalInHours": 6
+            }
+        }
+    }
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteLocalLogFiles.CreatedMoreThanNDaysAgo
+   * - The number of days after which local log files should be deleted.
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteLocalLogFiles.TriggerIntervalInHours
+   * - The interval (in hours) at which the cleanup process runs.

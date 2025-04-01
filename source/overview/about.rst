@@ -1,27 +1,34 @@
-About KissLog
+About Logbee
 ====================
 
-KissLog represents a powerful logging and monitoring solution for .NET applications.
+Logbee is a **centralized platform for log aggregation, exception tracking, and application performance monitoring (APM)**. It helps developers capture, analyze, and troubleshoot application behavior in real time.
 
-Some of the main features of KissLog are:
+With an intuitive user interface, Logbee simplifies log management, making it easy to monitor system activity and diagnose issues efficiently.
 
-- Automatically captures and logs all the exceptions
+Features
+-----------------------------
 
-- Monitors all the HTTP traffic
+- **Cross-platform hosting** - Deploy on Windows, Linux, Azure, or as a containerized application
+- **High performance & scalable** - Optimized for speed and large-scale log processing
+- **Easy configuration** - Customize the application behavior through a simple JSON configuration file
+- **Built on .NET8**
 
-- Lightweight, configurable SDK
+:doc:`Integrations </integrations/index>`
+----------------------------------------------------------
 
-- Centralized logging using `kisslog.net <https://kissLog.net/>`_ or KissLog on-premises integration
+- **.NET** - Serilog | KissLog
+- **Node.js** - ExpressJS
+- **OpenTelemetry** - Traces & logs
+- **REST API** - Send logs using HTTP requests
 
-.. figure:: images/centralized-logging.png
-   :alt: KissLog.net centralized logging
-   :align: center
+User interface
+-----------------------------
 
-   KissLog.net centralized logging
+.. figure:: images/logbee-user-interface.png
+   :alt: Logbee user interface
 
 
-Table of Contents
-------------------
+   .. caption:: Request captured on Logbee
 
 .. toctree::
    :maxdepth: 2

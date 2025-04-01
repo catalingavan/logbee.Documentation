@@ -1,4 +1,4 @@
-logbee.Frontend
+Logbee.Frontend
 =================================
 
 .. contents:: Table of contents
@@ -7,18 +7,16 @@ logbee.Frontend
 About
 ------------------------------
 
-logbee.Frontend is a user-interface application used by developers to visualize the captured errors, logs and other metrics data.
-
-logbee.Frontend is generating the user-interface by consuming logbee.Backend REST endpoints.
+Logbee.Frontend is a user-interface application that helps developers visualize captured errors, logs, and other metric data.
+It dynamically generates the UI by consuming REST endpoints from :doc:`Logbee.Backend </on-premises/logbee-backend/index>`.
 
 Authentication
 ------------------------------
 
-logbee.Frontend uses a JSON Web Token (JWT) for authentication.
+Logbee.Frontend uses a JSON Web Token (JWT) for authentication.
+The JWT must be signed using the secret key specified in the :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property inside the logbee.json configuration file.
 
-The authentication JWT must be signed with the value provided at :ref:`$.Authorization.HS256Secret <on-premises/logbee-frontend/configuration:Authorization>` property from the logbee.json configuration file.
-
-For the default value of ``$.Authorization.HS256Secret``, you can use the following authentication JWT:
+If using the default ``HS256Secret`` value, you can use the following authentication JWT:
 
 .. code-block:: none
     
@@ -31,7 +29,19 @@ For the default value of ``$.Authorization.HS256Secret``, you can use the follow
 Creating the JWT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The authentication JWT can be created programmatically or online (using https://jwt.io/, for example).  
+You can create an authentication JWT programmatically or using an online tool such as `jwt.io <https://jwt.io/>`_.
+
+To generate a JWT manually:
+
+1. Open `jwt.io <https://jwt.io/>`_ .
+
+2. Select the ``HS256`` algorithm.
+
+3. (Optional) Set the ``name`` claim  (e.g., "name": "user_name").
+
+4. Use the ``HS256Secret`` from your logbee.json configuration file as the secret key.
+
+5. Copy the generated JWT and use it as Token in the authentication page.
 
 .. figure:: images/generating-authentication-jwt.png
     :alt: Generating authentication JWT
@@ -43,28 +53,31 @@ The authentication JWT can be created programmatically or online (using https://
 User name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Authenticated user name is used for display purposes only, and it can be specified in one of the following options:
+The authenticated user name is used for display purposes only. It can be specified using one of the following methods:
 
-- at the end of the JWT, appended as ``@user_name``
+- Appending it to the JWT as ``@user_name``:
 
-.. code-block:: none
+  .. code-block:: none
     
     # Authentication token:
     eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.HP79qro7bvfH7BneUy5jB9Owc_5D2UavFDulRETAl9E@user_name
 
-- in the JWT payload using any of these claims: "emailAddress", "email", "preferred_username", "name"
+- Including it in the JWT payload using one of the following claims:
+
+  "emailAddress", "email", "preferred_username", "name"
+
 
 Auto-login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can automate the login process by directly passing the Authentication token in the login url, using the `token=value` query string parameter.
+You can automate the login process by passing the authentication token directly in the login URL using the ``token=value`` query string parameter.
 
 .. code-block:: none
     
     # Authentication url:
     http://localhost:44080/Auth/Login?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.HP79qro7bvfH7BneUy5jB9Owc_5D2UavFDulRETAl9E
 
-Bookmarking this url will allow for a faster login process.
+You can bookmark this URL to quickly log in without manually entering credentials each time.
 
 .. toctree::
    :hidden: 

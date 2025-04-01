@@ -1,13 +1,13 @@
 Docker
 =============================
 
-Logbee can run as a Docker application, thanks to `Marcio <https://github.com/zimbres>`_ valuable contribution.
+Logbee can run as a Docker application, thanks to the valuable contribution of `Marcio <https://github.com/zimbres>`_.
 
-The official Logbee Docker repositories are the following:
+The official Logbee Docker images are:
 
-- https://hub.docker.com/r/catalingavan/logbee.backend
+- `catalingavan/logbee.backend <https://hub.docker.com/r/catalingavan/logbee.backend>`_
 
-- https://hub.docker.com/r/catalingavan/logbee.frontend
+- `catalingavan/logbee.frontend <https://hub.docker.com/r/catalingavan/logbee.frontend>`_
 
 Running Logbee in Docker will automatically install all the necessary prerequisites.
 
@@ -17,65 +17,74 @@ Running Logbee in Docker will automatically install all the necessary prerequisi
 Docker files
 -------------------------------------------------------
 
-To get started running logBee as a Docker container, create the following files:
+To run Logbee as a Docker container, create the following files in the specified directory structure:
 
 .. code-block:: none
 
-    /logbee_Docker
+    /logbee-app/Docker
     ├── docker-compose.yml
-    ├── backend.appsettings.json
     ├── backend.logbee.json
-    ├── frontend.appsettings.json
     └── frontend.logbee.json
 
-.. admonition:: Download Docker files
-   :class: note
+A full working example of the Logbee Docker configuration files can be found at https://github.com/catalingavan/logbee-app/tree/main/Docker.
 
-   Full working example of the files above can be found on `https://github.com/catalingavan/logbee-app <https://github.com/catalingavan/logbee-app/tree/main/Docker>`_.
+The latest versions of the Docker container images can be found at https://github.com/catalingavan/logbee-app?tab=readme-ov-file#latest-versions.
 
 .. code-block:: none
     :caption: docker-compose.yml
 
-    version: "3.7"
     networks:
       default:
         name: logbee-net
+        driver: bridge
         driver_opts:
           com.docker.network.driver.mtu: 1380
-    
+
     services:
       backend:
-        image: catalingavan/logbee.backend:1.2.1
-        container_name: logbee.backend.dev
+        image: catalingavan/logbee.backend:2.0.0
+        container_name: logbee.backend
         restart: unless-stopped
+        environment:
+          - ASPNETCORE_URLS=http://0.0.0.0:80
+          - LOGBEE_BACKEND_CONFIGURATION_FILE_PATH=Configuration/backend.logbee.json
         volumes:
-          - ./backend.appsettings.json:/app/appsettings.json
-          - ./backend.logbee.json:/app/Configuration/logbee.json
+          - ./backend.logbee.json:/app/Configuration/backend.logbee.json
+          - ./frontend.logbee.json:/app/Configuration/frontend.logbee.json
         ports:
           - "44088:80"
-        links:
-          - "mongodb"
-    
+        depends_on:
+          - mongodb
+        networks:
+          - default
+
       frontend:
-        image: catalingavan/logbee.frontend:1.2.1
-        container_name: logbee.frontend.dev
+        image: catalingavan/logbee.frontend:2.0.0
+        container_name: logbee.frontend
         restart: unless-stopped
+        environment:
+          - ASPNETCORE_URLS=http://0.0.0.0:80
+          - LOGBEE_FRONTEND_CONFIGURATION_FILE_PATH=Configuration/frontend.logbee.json
         volumes:
-          - ./frontend.appsettings.json:/app/appsettings.json
-          - ./frontend.logbee.json:/app/Configuration/logbee.json
+          - ./frontend.logbee.json:/app/Configuration/frontend.logbee.json
+          - ./backend.logbee.json:/app/Configuration/backend.logbee.json
         ports:
           - "44080:80"
-        links:
-          - "backend"
-    
+        depends_on:
+          - backend
+        networks:
+          - default
+
       mongodb:
-        image: mongo:6.0.4
-        container_name: logbee.mongodb.dev
+        image: mongo:8.0.4
+        container_name: logbee.mongodb
         restart: unless-stopped
         volumes:
           - mongo-data:/data/db
           - mongo-config:/data/configdb
-    
+        networks:
+          - default
+
     volumes:
       mongo-data:
       mongo-config:
@@ -83,39 +92,36 @@ To get started running logBee as a Docker container, create the following files:
 Build
 -------------------------------------------------------
 
-To start the logBee server and all the necessary prerequisites, use ``docker-compose up`` command.
+To start the Logbee containers along with all necessary prerequisites, run the following command:
 
 .. code-block:: none
 
-    C:\logBee_Docker> docker-compose up
+    C:\logbee-app\Docker> docker compose up -d
 
-After all the services have been created, you can access the applications on the following urls:
+This command will create and start the containers for Logbee.Backend, Logbee.Frontend and MongoDB.
 
-- logbee.Frontend: http://localhost:44080/
-- logbee.Backend: http://localhost:44088/
+.. figure:: images/docker-compose-up.png
+   :alt: docker compose up
 
-To authenticate, use the following token:
+After all the services have been created, you can access the applications using the following URLs:
+
+- **Logbee.Frontend**: http://localhost:44080/
+
+.. figure:: images/logbee-frontend.png
+   :alt: Logbee.Frontend running as Docker container
+
+- **Logbee.Backend**: http://localhost:44088/
+
+.. figure:: images/logbee-backend.png
+   :alt: Logbee.Backend running as Docker container
+
+You can follow the :ref:`Authentication <on-premises/logbee-frontend/index:Authentication>` instructions for generating an authentication token.
+
+If the default ``HS256Secret`` value is being used, the following authentication token can be used for testing purposes:
 
 .. code-block:: none
 
    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.HP79qro7bvfH7BneUy5jB9Owc_5D2UavFDulRETAl9E
 
-
-.. figure:: images/docker-compose-up.png
-
-.. figure:: images/logbee.Frontend-docker.png
-
-.. figure:: images/logbee.Frontend-login.png
-
-.. figure:: images/logbee.Backend-docker.png
-
-
-Destroy
-----------------------------
-
-.. code-block:: none
-
-    C:\logBee_Docker> docker-compose down
-
-
-.. figure:: images/docker-compose-down.png
+.. note::
+   The above token is for demonstration purposes only. Replace it with a valid token generated using your own secret key for production environments.

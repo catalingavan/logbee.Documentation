@@ -5,6 +5,64 @@ Change log
    :local:
    :depth: 1
 
+logbee.Backend 2.0.0
+--------------------------
+
+Release date: 01-04-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.0.0
+
+Docker image: catalingavan/logbee.backend:2.0.0
+
+|
+
+**Improvements:**
+
+- | Refactored the application to fully support a containerized architecture.
+  | For more details, see the blog post: https://logbee.net/Blog/1000/migrating-a-web-application-from-windows-to-ubuntu 
+
+- | Completely redesigned the Azure implementation and deployment process, making it more efficient and easier to set up.
+  | For more details, see the :doc:`Microsoft Azure installation guide </on-premises/installation/azure/installation-guide>`.
+
+**Configuration breaking changes:**
+
+- Added required :ref:`LogbeeBackendConfigurationFilePath <on-premises/logbee-backend/configuration:LogbeeBackendConfigurationFilePath>` configuration property.
+
+.. code-block:: json
+    
+    {
+        "LogbeeFrontendConfigurationFilePath": "../../logbee.frontend/Configuration/logbee.json"
+    }
+
+- ``"Files"`` property has been renamed to ``"FileStorage"``
+
+- Added :ref:`FileStorage.MongoDb <on-premises/logbee-backend/configuration:FileStorage.MongoDb>` configuration property which is required when ``FileStorage.Provider = "MongoDb"``
+
+.. code-block:: json
+    
+    {
+        "FileStorage": {
+            "Provider": "MongoDb",
+            "MongoDb": {
+               "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
+               "DatabaseName": "LogbeeBackend"
+            }
+        }
+    }
+
+**Configuration changes:**
+
+- Removed the following properties:
+
+.. code-block:: json
+    
+    {
+        "LogbeeFrontendUrl": "http://logbee-frontend.your_domain.com",
+        "LogbeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_",
+        "LogbeeFrontend": {}
+    }
+
+
 logbee.Backend 1.3.0
 --------------------------
 

@@ -1,26 +1,37 @@
 Configuration
 =================================
 
-logbee.Frontend behavior can be customized by updating the ``Configuration\logbee.json`` file.
+logbee.Frontend functionality can be customized by updating the **Configuration\\logbee.json** file.
 
-A full example of the ``logbee.json`` configuration file can be found `here <https://github.com/catalingavan/logbee-app/blob/main/logbee.Frontend/logbee.json>`_.
+A full example of the configuration file can be found on https://github.com/catalingavan/logbee-app/blob/main/logbee.Frontend/logbee.json.
 
 .. contents:: Configuration options
    :local:
 
-LogBeeFrontendDomain
+LogbeeBackendConfigurationFilePath
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The domain of the logbee.Frontend application. This value is used in multiple places:
-
-- when generating the HTML titles
-- sets the default email domain for the authenticated users (``user1@logbee.dev``).
-- setting the sender email address to ``no-reply@`` + :ref:`LogBeeFrontendDomain <on-premises/logbee-frontend/configuration:LogBeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``), if no other value is specified under the :ref:`Smtp.Sender <on-premises/logbee-frontend/configuration:Smtp.Sender>` configuration.
+The path to the Logbee.Backend configuration file. The value can be absolute or relative.
 
 .. code-block:: json
     
     {
-        "LogBeeFrontendDomain": "logbee.dev"
+        "LogbeeBackendConfigurationFilePath": "../../logbee.Backend/Configuration/logbee.json"
+    }
+
+LogbeeFrontendDomain
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The domain of the Logbee.Frontend application. This value is used in multiple places:
+
+- when generating the HTML titles
+- sets the default email domain for the authenticated users (``user@{LogbeeFrontendDomain}``).
+- setting the sender email address to ``no-reply@`` + :ref:`LogbeeFrontendDomain <on-premises/logbee-frontend/configuration:LogbeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``), if no other value is specified under the :ref:`Smtp.Sender <on-premises/logbee-frontend/configuration:Smtp.Sender>` configuration.
+
+.. code-block:: json
+    
+    {
+        "LogbeeFrontendDomain": "logbee.dev"
     }
 
 StaticResourcesVersion
@@ -36,61 +47,37 @@ This property should be changed after an application update in order to invalida
         "StaticResourcesVersion": "1.0.0"
     }
 
-LogBeeBackendUrl
+LogbeeFrontendUrl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logbee.Backend application.
+Root url pointing to Logbee.Frontend application.
 
 .. code-block:: json
     
     {
-        "LogBeeBackendUrl": "http://logbee-backend.myapp.com/"
+        "LogbeeFrontendUrl": "http://logBee.myapp.com/"
     }
 
-LogBeeFrontendUrl
+LogbeeFrontend.BasicAuth.Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Root url pointing to logbee.Frontend application.
+The Basic HTTP authentication scheme password used to connect to Logbee.Frontend application.
 
 .. code-block:: json
     
     {
-        "LogBeeFrontendUrl": "http://logBee.myapp.com/"
+        "LogbeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_"
     }
 
-LogBeeBackend.BasicAuth.Password
+Logbee.License
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Basic HTTP authentication scheme password used to connect to logbee.Backend application.
-
-This property should have the same value as the same property from ``logbee.Backend\Configuration\logbee.json``.
+The Logbee on-premises license key. Can be null.
 
 .. code-block:: json
     
     {
-        "LogBeeBackend.BasicAuth.Password": "_LogBeeBackend_authorization_password_"
-    }
-
-LogBeeFrontend.BasicAuth.Password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Basic HTTP authentication scheme password used to connect to logbee.Frontend application.
-
-.. code-block:: json
-    
-    {
-        "LogBeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_"
-    }
-
-LogBee.License
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The LogBee on-premises license key. Can be null.
-
-.. code-block:: json
-    
-    {
-        "LogBee.License": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJMaWNlbnNlSWQiOiIzNTczMDI1My00NGRhLTRiZmMtOGQ0MS1iMzUzMDRkZWUyMzciLCJMaWNlbnNlVHlwZSI6IkVudGVycHJpc2UifQ.K4htH3YOulrpVrkTJuHza81VrYloYvTsfRYzb4fpUYI"
+        "Logbee.License": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJMaWNlbnNlSWQiOiIzNTczMDI1My00NGRhLTRiZmMtOGQ0MS1iMzUzMDRkZWUyMzciLCJMaWNlbnNlVHlwZSI6IkVudGVycHJpc2UifQ.K4htH3YOulrpVrkTJuHza81VrYloYvTsfRYzb4fpUYI"
     }
 
 
@@ -104,7 +91,8 @@ Database
             "Provider": "MongoDb",
             "MongoDb": {},
             "MySql": {},
-            "SqlServer": {}
+            "SqlServer": {},
+            "AzureCosmosDb": {}
         }
     }
 
@@ -119,6 +107,8 @@ Database
      - Sets the database provider to MySql.
    * - SqlServer
      - Sets the database provider to MS-SQL.
+   * - AzureCosmosDb
+     - Sets the database provider to Azure CosmosDB.
 
 .. list-table::
    :header-rows: 1
@@ -138,6 +128,12 @@ Database
    * - Database.SqlServer
    * - Required when "Database.Provider" is "SqlServer".
 
+.. list-table::
+   :header-rows: 1
+
+   * - Database.AzureCosmosDb
+   * - Required when "Database.Provider" is "AzureCosmosDb".
+
 Database.MongoDb
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -149,7 +145,7 @@ Configuration used to connect to MongoDb database.
         "Database": {
             "MongoDb": {
                 "ConnectionString": "mongodb://localhost:27017?socketTimeoutMS=5000&connectTimeoutMS=5000",
-                "DatabaseName": "LogBeeFrontend"
+                "DatabaseName": "LogbeeFrontend"
             }
         }
     }
@@ -164,7 +160,7 @@ Configuration used to connect to MySql database.
     {
         "Database": {
             "MySql": {
-                "ConnectionString": "server=localhost;port=3306;database=LogBeeFrontend;uid=<replace_user>;password=<replace_password>;Charset=utf8;"
+                "ConnectionString": "server=localhost;port=3306;database=LogbeeFrontend;uid=<replace_user>;password=<replace_password>;Charset=utf8;"
             }
         }
     }
@@ -179,7 +175,25 @@ Configuration used to connect to MS-SQL database.
     {
         "Database": {
             "SqlServer": {
-                "ConnectionString": "Server=localhost;Database=LogBeeFrontend;User ID=<replace_user>;Password=<replace_password>;TrustServerCertificate=True;"
+                "ConnectionString": "Server=localhost;Database=LogbeeFrontend;User ID=<replace_user>;Password=<replace_password>;TrustServerCertificate=True;"
+            }
+        }
+    }
+
+Database.AzureCosmosDb
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Configuration used to connect to Azure CosmosDB database.
+
+.. code-block:: json
+    
+    {
+        "Database": {
+            "AzureCosmosDb": {
+                "ApplicationRegion": "West Europe",
+                "ConnectionString": "https://cosmos-db-name.documents.azure.com:443/;AccountKey=_accountKeyValue_;",
+                "DatabaseName": "LogbeeFrontend",
+                "AzureStorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=storagename;AccountKey=_accountKeyValue_;EndpointSuffix=core.windows.net"
             }
         }
     }
@@ -207,7 +221,7 @@ Smtp.Sender
 
 The ``Smtp.Sender`` configuration is optional and allows for specifying the sender email address.
 
-If not specified (null), the sender email address will default to  ``no-reply@`` + :ref:`LogBeeFrontendDomain <on-premises/logbee-frontend/configuration:LogBeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``).
+If not specified (null), the sender email address will default to  ``no-reply@`` + :ref:`LogbeeFrontendDomain <on-premises/logbee-frontend/configuration:LogbeeFrontendDomain>` (e.g., ``no-reply@logbee.dev``).
 
 .. code-block:: json
     
@@ -305,3 +319,82 @@ More details about Azure Active Directory authentication can be found :doc:`here
         }
     }
 
+ApplicationSettings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+    
+    {
+        "ApplicationSettings": {
+            "CacheApplicationsRepositoryInSeconds": 600,
+            "ProcessEmailsQueueIntervalInSeconds": 30,
+            "DeleteProcessedEmails": {},
+            "DeleteLocalLogFiles": {}
+        }
+    }
+
+.. list-table::
+   :header-rows: 1
+
+   * - ApplicationSettings.CacheApplicationsRepositoryInSeconds
+   * - Specifies the number of seconds for which the applications should be cached after they have been fetched from the database.
+       This setting has no visible impact on the user interface but improves database performance, especially when using Azure CosmosDB.
+       If the value is set to `0`, caching will be disabled.
+
+.. list-table::
+   :header-rows: 1
+
+   * - ApplicationSettings.ProcessEmailsQueueIntervalInSeconds
+   * - Defines the interval (in seconds) at which the system processes emails in the queue. A lower value increases responsiveness but may lead to more frequent database queries.
+
+ApplicationSettings.DeleteProcessedEmails
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: json
+    
+    {
+        "ApplicationSettings": {
+            "DeleteProcessedEmails": {
+                "SentMoreThanNHoursAgo": 12,
+                "TriggerIntervalInMinutes": 60
+            }
+        }
+    }
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteProcessedEmails.SentMoreThanNHoursAgo
+   * - Specifies the number of hours after which sent and processed emails should be deleted. Helps prevent database bloat by automatically removing old emails.
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteProcessedEmails.TriggerIntervalInMinutes
+   * - Defines how often (in minutes) the system checks and removes processed emails that meet the criteria. A lower value ensures frequent cleanup but may increase database load.
+
+ApplicationSettings.DeleteLocalLogFiles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: json
+    
+    {
+        "ApplicationSettings": {
+            "DeleteLocalLogFiles": {
+                "CreatedMoreThanNDaysAgo": 3,
+                "TriggerIntervalInHours": 6
+            }
+        }
+    }
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteLocalLogFiles.CreatedMoreThanNDaysAgo
+   * - The number of days after which local log files should be deleted.
+
+.. list-table::
+   :header-rows: 1
+
+   * - DeleteLocalLogFiles.TriggerIntervalInHours
+   * - The interval (in hours) at which the cleanup process runs.
