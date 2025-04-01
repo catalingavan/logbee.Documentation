@@ -12,11 +12,17 @@ Release date: 01-04-2025
 
 https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.0.0
 
+Docker image: catalingavan/logbee.backend:2.0.0
+
+|
+
 **Improvements:**
 
-- The application has been refactored to fully support a containerized architecture.
+- | Refactored the application to fully support a containerized architecture.
+  | For more details, see the blog post: https://logbee.net/Blog/1000/migrating-a-web-application-from-windows-to-ubuntu 
 
-- Completely redesigned the Azure implementation and deployment process, making it more efficient and easier to set up.
+- | Completely redesigned the Azure implementation and deployment process, making it more efficient and easier to set up.
+  | For more details, see the :doc:`Microsoft Azure installation guide </on-premises/installation/azure/installation-guide>`.
 
 **Configuration breaking changes:**
 
@@ -52,7 +58,8 @@ https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.0.0
     
     {
         "LogbeeFrontendUrl": "http://logbee-frontend.your_domain.com",
-        "LogbeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_"
+        "LogbeeFrontend.BasicAuth.Password": "_LogBeeFrontend_authorization_password_",
+        "LogbeeFrontend": {}
     }
 
 
