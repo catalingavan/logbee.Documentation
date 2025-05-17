@@ -5,6 +5,36 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 2.1.1
+--------------------------
+
+Release date: 17-05-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v2.1.1
+
+Docker image: catalingavan/logbee.frontend:2.1.1
+
+This release is compatible with :ref:`logbee.Backend-v2.1.1 <on-premises/logbee-backend/change-log:logbee.Backend 2.1.1>` or newer versions.
+
+|
+
+**Introduced Interceptors:**
+
+- Interceptors are JavaScript functions that run before each request is logged.
+- Useful for filtering out unwanted or repetitive requests (e.g., health checks).
+- Interceptors receive a ``context`` object and a ``next()`` function.
+- If ``next()`` is called, the request is logged; otherwise, it's skipped.
+
+.. figure:: images/change-log/create-interceptor.png
+    :alt: Creating a new interceptor
+
+.. admonition:: Database migration
+    :class: note
+
+    Logbee will automatically attempt to apply the required database migration by creating the new ``Interceptor`` table. This process is expected to complete without issues.
+
+    If you are using MySql or SqlServer as your :ref:`Database <on-premises/logbee-frontend/configuration:Database>` provider and the automatic migration fails, you can manually apply the migration script. The SQL file will be available in the ``/logs`` folder of your installation.
+
 logbee.Frontend 2.0.0
 --------------------------
 
@@ -14,9 +44,9 @@ https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v2.0.0
 
 Docker image: catalingavan/logbee.frontend:2.0.0
 
-|
-
 This release is compatible with :ref:`logbee.Backend-v2.0.0 <on-premises/logbee-backend/change-log:logbee.Backend 2.0.0>` or newer versions.
+
+|
 
 **Improvements:**
 

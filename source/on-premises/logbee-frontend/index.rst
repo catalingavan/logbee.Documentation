@@ -86,5 +86,5 @@ You can bookmark this URL to quickly log in without manually entering credential
    :includehidden:
 
    configuration
-   change-log
    active-directory-auth/index
+   change-log
