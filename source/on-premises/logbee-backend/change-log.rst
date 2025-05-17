@@ -5,6 +5,45 @@ Change log
    :local:
    :depth: 1
 
+logbee.Backend 2.1.1
+--------------------------
+
+Release date: 17-05-2025
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.1.1
+
+Docker image: catalingavan/logbee.backend:2.1.1
+
+This release is compatible with :ref:`logbee.Frontend-v2.1.1 <on-premises/logbee-frontend/change-log:logbee.Frontend 2.1.1>` or newer versions.
+
+|
+
+**Introduced Interceptors:**
+
+- Interceptors are JavaScript functions that run before each request is logged.
+- Useful for filtering out unwanted or repetitive requests (e.g., health checks).
+- Interceptors receive a ``context`` object and a ``next()`` function.
+- If ``next()`` is called, the request is logged; otherwise, it's skipped.
+
+**Interceptor JavaScript example**
+
+.. code-block:: js
+    
+    function(context, next) {
+      const statusCode = context.requestLog.httpProperties.response.httpStatusCode;
+      const localPath = context.requestLog.httpProperties.url.path.toLowerCase();
+
+      if (localPath === "/status/ping" && statusCode === 200) {
+         // Skip logging successful health check requests
+         return;
+      }
+
+      // Continue logging
+      next();
+   }
+
+
+
 logbee.Backend 2.0.0
 --------------------------
 
