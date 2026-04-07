@@ -5,6 +5,17 @@ Change log
    :local:
    :depth: 1
 
+logbee.Backend 2.2.0
+--------------------------
+
+Release date: 06-04-2026
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Backend-v2.2.0
+
+Docker image: catalingavan/logbee.backend:2.2.0
+
+This release is compatible with :ref:`logbee.Frontend-v2.2.0 <on-premises/logbee-frontend/change-log:logbee.Frontend 2.2.0>` or newer versions.
+
 logbee.Backend 2.1.1
 --------------------------
 

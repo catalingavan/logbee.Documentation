@@ -5,6 +5,34 @@ Change log
    :local:
    :depth: 1
 
+logbee.Frontend 2.2.0
+--------------------------
+
+Release date: 06-04-2026
+
+https://github.com/catalingavan/logbee-app/releases/tag/logbee.Frontend-v2.2.0
+
+Docker image: catalingavan/logbee.frontend:2.2.0
+
+This release is compatible with :ref:`logbee.Backend-v2.2.0 <on-premises/logbee-backend/change-log:logbee.Backend 2.2.0>` or newer versions.
+
+|
+
+**Introduced Application groups:**
+
+Applications can now be grouped into different groups, such as "DEV", "QA", "Production", that can be independently loaded from the Dashboard menu.
+
+.. figure:: images/change-log/applicationGroups-dashboard.png
+    :alt: Application groups in the dashboard
+
+.. figure:: images/change-log/manage-applicationGroups.png
+    :alt: Updating Application groups
+
+**Introduced visual indicators that highlights the relative execution duration between log entries:**
+
+.. figure:: images/change-log/logMessageBar.png
+    :alt: Highligting duration between two log entries
+
 logbee.Frontend 2.1.1
 --------------------------
 

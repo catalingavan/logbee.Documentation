@@ -1,11 +1,7 @@
 ﻿Third Party Software Notices
 ================================================
 
-logBee.net would not be possible without the help provided by third-party components.
-
-We truly appreciate the passion and efforts of developers who are trying to make programming better and easier for everyone.
-
-In order to use logBee.net on-premises, licensee must fully agree and comply with these license terms.
+Logbee would not be possible without the help provided by third-party components.
 
 We are trying to keep this list up-to-date. If we unintentionally missed to list a component, please send an email to catalingavan@gmail.com.
 

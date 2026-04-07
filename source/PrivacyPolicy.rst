@@ -1,51 +1,81 @@
 Privacy Policy
 ==========================================
 
-Last updated: February 10, 2021
+Last updated: April 7, 2026
 
-KISS Software SRL ("us", "we", or "our") operates https://logBee.net (the "Site", "Service", "logBee"). This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, https://logBee.net.
+This Privacy Policy explains how KISS Software SRL ("we", "us", "our") collects, uses, and protects your information when you use Logbee (the "Service") available at https://logbee.net.
 
-Information Collection and Use
+By using the Service, you agree to the collection and use of information in accordance with this policy.
+
+Information We Collect
 ------------------------------------------
 
-1. For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your email address, name, phone number, and postal address. The information that we collect will be used to contact or identify you.
+We collect information to provide and improve the Service.
 
-2. Whenever you visit logBee.net, we automatically collect certain information that your browser sends. Information collected may include information such as your computer's Internet Protocol ("IP") address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.
+**Information you provide**
+- Account details such as name, email address, and contact information  
 
-3. We do not sell, rent, or give your personal information to any third party, except as required to do so by law.
+**Automatically collected information**
+- IP address  
+- Browser type and version  
+- Pages visited, time spent, and usage statistics  
 
-Deleting your data
+**Application data**
+- Logs, errors, traces, and metrics that you choose to send to logBee  
+
+Use of Information
 ------------------------------------------
 
-1. logBee offers through the user-interface the possibility for the user to delete, at desire, the captured application data (logs, trace information, errrors, metrics).
+We use the collected information to:
 
-2. If you wish us to remove all your information that we store on logBee (including your account information) please request this using the contact form.
+- Provide, operate, and maintain the Service  
+- Improve performance and user experience  
+- Communicate with you (for support or important updates)  
+- Ensure security and prevent misuse  
+
+We do not sell or rent your personal data to third parties. We may disclose information only if required by law.
+
+Your Data and Control
+------------------------------------------
+
+You remain in control of your data:
+
+- You can delete application data (logs, traces, metrics) directly from the Service  
+- You may request deletion of your account and associated personal data at any time  
+
+To request full data deletion, please contact us.
+
+You are responsible for the data you send to Logbee. If your logs contain sensitive information, you should filter or remove it before sending it to the Service.
 
 Cookies
 ------------------------------------------
 
-1. Cookies are files with small amount of data that is commonly used an anonymous unique identifier.
+We use cookies to improve the Service and enhance your experience.
 
-2. Our website uses these "cookies" to collection information and to improve our Service.
+Cookies are small data files stored on your device that help us understand usage patterns and optimize functionality.
+
+You can choose to disable cookies through your browser settings, though some parts of the Service may not function properly.
 
 Security
 ------------------------------------------
 
-1. We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+We take reasonable technical and organizational measures to protect your information.
 
-2. logBee.net provides restricted access to your application logs based on the Username-Password identification process. To prevent unauthorized access to your application logs, it is important to use a strong password when accessing our Site.
+However, no method of transmission or storage is completely secure. While we strive to protect your data, we cannot guarantee absolute security.
 
-Links to Other Sites
+You are responsible for maintaining the confidentiality of your account credentials and using a strong password.
+
+Third-Party Links
 ------------------------------------------
 
-1. Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+The Service may contain links to third-party websites. We are not responsible for their content or privacy practices. We encourage you to review their privacy policies.
 
 Changes to This Privacy Policy
 ------------------------------------------
 
-1. We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.
+We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised "Last updated" date.
 
-Contact Us
+Contact
 ------------------------------------------
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
+If you have any questions about this Privacy Policy, please contact us.

@@ -1,74 +1,85 @@
 Terms of Service
 ==========================================
 
-Last updated: April 01, 2024
+Last updated: April 7, 2026
 
-These Terms of Service ("Terms", "Terms of Service") govern your relationship with https://logBee.net website (the "Service", "Site", "logBee") operated by KISS Software SRL ("us", "we", or "our").
+These Terms of Service ("Terms") govern your use of the Logbee website and services (the "Service") operated by KISS Software SRL ("we", "us", "our").
 
-If you do not agree with any term or condition set forth below, you are not authorized to use the Service for any purpose.
+By accessing or using the Service, you agree to these Terms. If you do not agree, please do not use the Service.
 
 Accounts
 ------------------------------------------
 
-1. When you create an account with us, you must provide accurate and valid information.
+When creating an account, you agree to:
 
-2. You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service.
+- Provide accurate and complete information  
+- Keep your account credentials secure
 
-3. You understand that logBee reserves the right to implement fair use rate limiting based on your volume of data.
+You are responsible for all activity under your account.
 
-4. You authorise KISS Software employees the right to access your account information to provide necessary support and administration services.
+You may not:
 
-Logging and tracing data
+- Reproduce, duplicate, or resell any part of the Service  
+- Use the Service in a way that could harm its availability or performance  
+
+We may apply reasonable usage limits (such as rate limiting) to ensure fair use of the Service.
+
+Our team may access your account when necessary to provide support or maintain the Service.
+
+Logging and Tracing Data
 ------------------------------------------
 
-1. logBee stores the data you provide (logs, errors and tracing information) on a secured server hosted in Bucharest, Romania.
+Logbee processes and stores the data you send to it (such as logs, errors, and tracing information) on secure infrastructure in Germany.
 
-2. We do not share or disclosure any of your logging information, unless there is a legal obligation to do so imposed by relevant government agencies.
+We are committed to protecting your data:
 
-3. We do not sell or rent your logging information to anyone.
+- We do not sell or rent your data  
+- We do not share your data, except where required by law  
 
-4. You have full control over the data you wish to send to logBee for processing. You may unintentionally send information from your application to our Service that includes sensitive data. If you wish to remove specific information from being sent within logs, error or crash reports, we provide the means to do so at a code level.
+You control what data is sent to Logbee. If your applications include sensitive information in logs or error reports, you are responsible for filtering or removing it before sending it to the Service.
 
 Disclaimer
 ------------------------------------------
 
-1. Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied.
+The Service is provided **"as is"** and **"as available"**, without warranties of any kind.
 
-2. The Site or Service may be temporarily unavailable from time to time for maintenance or other reasons. logBee assumes no responsibility for any error, omission, interruption, deletion, defect, delay in operation or transmission, communications line failure, theft or destruction or unauthorized access to, or alteration of, user communications.
+We do not guarantee that the Service will always be available, uninterrupted, or error-free.
 
-3. We maintain reasonable administrative, physical and technical measures to protect the confidentiality and security of your information. Unfortunately, no website is completely secure. Therefore, we cannot guarantee that your information will not be disclosed, misused or lost by accident or by the unauthorized acts of others.
+While we take reasonable steps to protect your data, no system is completely secure. We cannot guarantee absolute security.
 
-4. In no event shall KISS Software SRL, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
+To the maximum extent permitted by law, we are not liable for any indirect, incidental, or consequential damages, including loss of data, profits, or business interruption resulting from your use of the Service.
 
-Copyright Terms
+Intellectual Property
 ------------------------------------------
 
-1. The Service and its original content, features and functionality are and will remain the exclusive property of KISS Software SRL and its licensors. The Service is protected by copyright, trademark, and other laws of both the Romania and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of KISS Software SRL.
+The Service, including its features and functionality, remains the property of KISS Software SRL and its licensors, and is protected by applicable intellectual property laws.
 
-2. KISS Software SRL claims no intellectual property rights over any of the content or data you upload or add to the Service. All data added to the Service by you or users of your account retains its original ownership.
+You retain full ownership of any data you submit to the Service.
 
 Termination
 ------------------------------------------
 
-1. If you wish to terminate your account, you may simply discontinue using the Service.
+You may stop using the Service at any time.
 
-2. We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+We may suspend or terminate your access if you violate these Terms or use the Service in a way that could harm us or other users.
 
-Changes
+Changes to These Terms
 ------------------------------------------
 
-1. We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+We may update these Terms from time to time. If changes are significant, we will make reasonable efforts to notify you in advance.
 
-2. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
+By continuing to use the Service after updates take effect, you agree to the revised Terms.
 
 Governing Law
 ------------------------------------------
 
-1. These Terms shall be governed and construed in accordance with the laws of Romania, without regard to its conflict of law provisions.
+These Terms are governed by the laws of Romania.
 
-2. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.
+If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will continue to apply.
 
-Contact Us
+Our failure to enforce any provision does not constitute a waiver of our rights.
+
+Contact
 ------------------------------------------
 
 If you have any questions about these Terms, please contact us.

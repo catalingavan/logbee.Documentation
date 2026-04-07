@@ -42,7 +42,7 @@ The latest versions of the Docker container images can be found at https://githu
 
     services:
       backend:
-        image: catalingavan/logbee.backend:2.0.0
+        image: catalingavan/logbee.backend:2.2.0
         container_name: logbee.backend
         restart: unless-stopped
         environment:
@@ -59,7 +59,7 @@ The latest versions of the Docker container images can be found at https://githu
           - default
 
       frontend:
-        image: catalingavan/logbee.frontend:2.0.0
+        image: catalingavan/logbee.frontend:2.2.0
         container_name: logbee.frontend
         restart: unless-stopped
         environment:

@@ -353,7 +353,7 @@ Set the **Config** textarea to the following:
     version: "3.7"
     services:
       backend:
-        image: catalingavan/logbee.backend:2.0.0
+        image: catalingavan/logbee.backend:2.2.0
         init: true
         restart: unless-stopped
         volumes:
@@ -386,7 +386,7 @@ Under **Deployment > Deployment Center** menu, **Settings** tab, update the **Co
    version: "3.7"
    services:
     frontend:
-      image: catalingavan/logbee.frontend:2.0.0
+      image: catalingavan/logbee.frontend:2.2.0
       init: true
       restart: unless-stopped
       volumes:
